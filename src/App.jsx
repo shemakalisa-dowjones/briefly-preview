@@ -33,11 +33,36 @@ import {
    ================================================================ */
 
 const STEP_META = [
-  { label: 'Tuesday Briefing', time: '7:04 a.m.', hint: 'Tap "Track this storyline" on the World card' },
-  { label: 'Alert Created', time: '7:11 a.m.', hint: 'Tap "Done" to confirm tracking' },
-  { label: 'Delta Alert', time: 'Thu 2:47 p.m.', hint: 'Tap "Open in AI Mode"' },
-  { label: 'AI Mode', time: 'Thu 2:53 p.m.', hint: 'Tap X to close when you\'re done reading' },
-  { label: 'Friday Briefing', time: 'Fri 7:02 a.m.', hint: 'Tap "Track this too" on the Economy card to restart' },
+  {
+    label: 'Briefing',
+    time: 'Tue 7:04 a.m.',
+    hint: 'Tap "Track this storyline" on the World card',
+    annotation: 'Priya opens her morning briefing — AI-synthesized storylines with the key "so what" up front. She can go deeper on any story or track ones she wants to follow.',
+  },
+  {
+    label: 'Track',
+    time: 'Tue 7:11 a.m.',
+    hint: 'Tap "Done" to confirm tracking',
+    annotation: 'Briefly confirms what it will watch — specific entities, signals, and themes extracted from the storyline. No configuration needed.',
+  },
+  {
+    label: 'Alert',
+    time: 'Thu 2:47 p.m.',
+    hint: 'Tap "Open in AI Mode"',
+    annotation: 'Two days later, Briefly surfaces a delta alert — only the developments that changed the picture since Tuesday, not a full recap.',
+  },
+  {
+    label: 'AI Mode',
+    time: 'Thu 2:53 p.m.',
+    hint: 'Tap X to close when you\'re done reading',
+    annotation: 'Priya asks a follow-up question in AI Mode. The answer is grounded in WSJ reporting with inline citations — not a generic LLM response.',
+  },
+  {
+    label: 'Fri Briefing',
+    time: 'Fri 7:02 a.m.',
+    hint: 'Tap "Track this too" on the Economy card to restart',
+    annotation: 'Friday\'s briefing reflects her tracked storyline — updated France card at the top with an alert badge, plus a related Economy story surfaced because of her interests.',
+  },
 ];
 
 /* ---- Shared ---- */
@@ -205,7 +230,7 @@ const BRIEFING_CARDS = [
   },
 ];
 
-function Moment1({ goNext }) {
+function Moment1({ goNext, goToAI }) {
   const [deeperCard, setDeeperCard] = useState(null);
 
   return (
@@ -239,11 +264,9 @@ function Moment1({ goNext }) {
                   <BookmarkSimple size={14} /> Track this storyline
                 </button>
               )}
-              {i === 1 && (
-                <button className="action-tertiary">
-                  <Sparkle size={14} /> Ask AI
-                </button>
-              )}
+              <button className="action-tertiary" onClick={goToAI}>
+                <Sparkle size={14} /> Ask AI
+              </button>
             </div>
           </article>
         ))}
@@ -360,13 +383,13 @@ const SUGGESTIONS = [
   'Compare this to the 2012 eurozone crisis — what\'s different?',
 ];
 
-function Moment4({ goNext }) {
+function Moment4({ goNext, goBack }) {
   return (
     <div className="briefly-screen">
       <div style={{ padding: 20, display: 'flex', flexDirection: 'column', minHeight: '100%', background: 'var(--wsj-surface)' }}>
         <div className="ai-header">
           <div className="ai-title"><Sparkle size={16} weight="fill" /> AI Mode</div>
-          <Hotspot onClick={goNext} label="Close AI Mode">
+          <Hotspot onClick={goBack || goNext} label="Close AI Mode">
             <button className="ai-close hotspot-target"><X size={20} /></button>
           </Hotspot>
         </div>
@@ -456,7 +479,7 @@ const FRIDAY_CARDS = [
   },
 ];
 
-function Moment5({ goNext }) {
+function Moment5({ goNext, goToAI }) {
   const [deeperCard, setDeeperCard] = useState(null);
   const [showDelta, setShowDelta] = useState(false);
 
@@ -495,7 +518,7 @@ function Moment5({ goNext }) {
                     </button>
                   </Hotspot>
                 ) : (
-                  <button className="action-tertiary">
+                  <button className="action-tertiary" onClick={goToAI}>
                     <Sparkle size={14} /> Ask AI
                   </button>
                 )}
@@ -529,23 +552,90 @@ function Moment5({ goNext }) {
   );
 }
 
+/* ---- Cover Page ---- */
+
+const COVER_STEPS = [
+  { label: 'Morning Briefing', desc: 'AI-synthesized storylines with the key "so what" up front' },
+  { label: 'Track a Storyline', desc: 'One tap to follow — Briefly extracts what to watch automatically' },
+  { label: 'Delta Alert', desc: '48 hours later, only the developments that changed the picture' },
+  { label: 'AI Mode', desc: 'Follow-up questions grounded in WSJ reporting, not generic LLM output' },
+  { label: 'Personalized Briefing', desc: 'Friday\'s briefing adapts to what she\'s tracking' },
+];
+
+function CoverPage({ onStart }) {
+  return (
+    <div className="cover">
+      <div className="cover-logo">The Wall Street Journal.</div>
+      <div className="cover-title">Briefly</div>
+      <div className="cover-subtitle">
+        AI-powered intelligence that keeps senior professionals ahead of the stories that matter to them — without the noise.
+      </div>
+
+      <div className="cover-persona">
+        <div className="cover-persona-avatar">
+          <UserCircle size={28} weight="fill" color="#888" />
+        </div>
+        <div>
+          <div className="cover-persona-name">Priya Menon</div>
+          <div className="cover-persona-role">Director of Corporate Development · Pre-Suite</div>
+        </div>
+      </div>
+
+      <div className="cover-journey">
+        <div className="cover-journey-title">The journey</div>
+        {COVER_STEPS.map((s, i) => (
+          <div key={i} className="cover-step">
+            <span className="cover-step-num">{i + 1}</span>
+            <div className="cover-step-text">
+              <div className="cover-step-label">{s.label}</div>
+              <div className="cover-step-desc">{s.desc}</div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <button className="cover-start" onClick={onStart}>
+        Start the journey <ArrowRight size={16} weight="bold" style={{ verticalAlign: '-2px', marginLeft: 6 }} />
+      </button>
+    </div>
+  );
+}
+
 /* ---- Main App ---- */
 
 const MOMENTS = [Moment1, Moment2, Moment3, Moment4, Moment5];
 
 export default function App() {
+  const [started, setStarted] = useState(false);
   const [step, setStep] = useState(0);
+  const [prevStep, setPrevStep] = useState(null);
   const [transitioning, setTransitioning] = useState(false);
   const screenRef = useRef(null);
 
-  function advance() {
+  function goTo(target) {
     setTransitioning(true);
     setTimeout(() => {
-      setStep(s => (s + 1) % MOMENTS.length);
+      setPrevStep(step);
+      setStep(target);
       setTransitioning(false);
       if (screenRef.current) screenRef.current.scrollTop = 0;
     }, 300);
   }
+
+  function advance() {
+    goTo((step + 1) % MOMENTS.length);
+  }
+
+  function goToAI() {
+    goTo(3);
+  }
+
+  function goBack() {
+    if (prevStep != null) goTo(prevStep);
+    else advance();
+  }
+
+  if (!started) return <CoverPage onStart={() => setStarted(true)} />;
 
   const ActiveMoment = MOMENTS[step];
   const meta = STEP_META[step];
@@ -562,12 +652,17 @@ export default function App() {
           <button
             key={i}
             className={`proto-dot ${i === step ? 'active' : ''} ${i < step ? 'done' : ''}`}
-            onClick={() => { setStep(i); if (screenRef.current) screenRef.current.scrollTop = 0; }}
+            onClick={() => goTo(i)}
           >
             <span className="dot-num">{i + 1}</span>
             <span className="dot-label">{m.label}</span>
           </button>
         ))}
+      </div>
+
+      <div className="moment-annotation">
+        <span className="moment-time-badge">{meta.time}</span>
+        {meta.annotation}
       </div>
 
       <div className="proto-hint">
@@ -579,7 +674,7 @@ export default function App() {
         ref={screenRef}
         className={`proto-viewport ${transitioning ? 'fading' : ''}`}
       >
-        <ActiveMoment goNext={advance} />
+        <ActiveMoment goNext={advance} goToAI={goToAI} goBack={goBack} />
       </div>
     </div>
   );

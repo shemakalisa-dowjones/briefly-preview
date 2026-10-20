@@ -893,3 +893,149 @@
   justify-content: center;
   padding: 12px 0 4px;
 }
+
+/* Cover page */
+.cover {
+  max-width: 440px;
+  margin: 60px auto;
+  padding: 0 24px;
+  font-family: system-ui, -apple-system, sans-serif;
+  color: #fff;
+  text-align: center;
+}
+.cover-logo {
+  font-family: Georgia, serif;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #888;
+  margin-bottom: 32px;
+}
+.cover-title {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 8px;
+}
+.cover-subtitle {
+  font-size: 15px;
+  color: #999;
+  line-height: 1.5;
+  margin-bottom: 36px;
+}
+.cover-journey {
+  text-align: left;
+  margin-bottom: 36px;
+}
+.cover-journey-title {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: #666;
+  margin-bottom: 14px;
+}
+.cover-step {
+  display: flex;
+  gap: 14px;
+  padding: 10px 0;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+.cover-step:last-child { border-bottom: 1px solid rgba(255,255,255,0.08); }
+.cover-step-num {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #333;
+  color: #aaa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 600;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+.cover-step-text {
+  flex: 1;
+}
+.cover-step-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 2px;
+}
+.cover-step-desc {
+  font-size: 12px;
+  color: #888;
+  line-height: 1.4;
+}
+.cover-start {
+  background: #fff;
+  color: #1a1a1a;
+  border: none;
+  border-radius: 12px;
+  padding: 14px 32px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.15s ease;
+  width: 100%;
+}
+.cover-start:hover { opacity: 0.85; }
+.cover-persona {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 12px;
+  padding: 14px 16px;
+  margin-bottom: 28px;
+  text-align: left;
+}
+.cover-persona-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.cover-persona-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+}
+.cover-persona-role {
+  font-size: 12px;
+  color: #888;
+}
+
+/* Per-moment annotation */
+.moment-annotation {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 10px 14px;
+  margin-bottom: 12px;
+  font-size: 13px;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.7);
+}
+.moment-annotation strong {
+  color: #fff;
+  font-weight: 600;
+}
+.moment-time-badge {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 600;
+  color: #888;
+  background: rgba(255,255,255,0.06);
+  border-radius: 4px;
+  padding: 2px 6px;
+  margin-right: 6px;
+}
