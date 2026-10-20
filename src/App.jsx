@@ -568,7 +568,7 @@ function CoverPage({ onStart }) {
       <div className="cover-top">
         <div className="cover-logo">The Wall Street Journal.</div>
         <hr className="cover-rule" />
-        <div className="cover-title">Briefly</div>
+        <div className="cover-title">Your Daily Brief</div>
         <div className="cover-subtitle">
           AI-powered intelligence that keeps senior professionals ahead of the stories that matter to them — without the noise.
         </div>
