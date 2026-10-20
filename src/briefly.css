@@ -1,0 +1,232 @@
+html,
+body,
+div,
+span,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+abbr,
+address,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+samp,
+small,
+strong,
+sub,
+sup,
+var,
+b,
+i,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+body {
+  line-height: 1;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote::before,
+blockquote::after,
+q::before,
+q::after {
+  content: '';
+  content: none;
+}
+
+a {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+button,
+[type='button'],
+[type='reset'],
+[type='submit'] {
+  appearance: none;
+  border-style: none;
+  padding: 0;
+  background-color: transparent;
+}
+
+input {
+  appearance: none;
+  border-style: none;
+  margin: 0;
+  background-color: transparent;
+}
+
+/* Briefly — shared tokens and base styles
+ * Extends Index DS tokens for the Briefly AI intelligence product.
+ * Dark-theme-first, mobile-first. */
+
+/* Motion tokens — Index DS has none; proposed for DS team adoption */
+:root {
+  --motion-duration-fast: 150ms;
+  --motion-duration-normal: 250ms;
+  --motion-duration-slow: 400ms;
+  --motion-ease-default: cubic-bezier(0.4, 0, 0.2, 1);
+  --motion-ease-enter: cubic-bezier(0, 0, 0.2, 1);
+  --motion-ease-exit: cubic-bezier(0.4, 0, 1, 1);
+}
+
+/* Briefly-specific layout tokens */
+:root {
+  --briefly-bottomnav-height: 56px;
+  --briefly-safe-area-bottom: env(safe-area-inset-bottom, 0px);
+  --briefly-page-max-width: 428px;
+  --briefly-card-gap: var(--space-2);
+}
+
+/* Mobile shell */
+.briefly-shell {
+  position: relative;
+  max-width: var(--briefly-page-max-width);
+  margin: 0 auto;
+  min-height: 100vh;
+  background: var(--surface-background);
+  color: var(--content-base);
+  overflow-x: hidden;
+  padding-bottom: calc(var(--briefly-bottomnav-height) + var(--briefly-safe-area-bottom));
+}
+
+/* Page header */
+.briefly-page-header {
+  padding: var(--space-16) var(--space-20) var(--space-8);
+}
+
+.briefly-masthead {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-12) 0 var(--space-4);
+}
+
+.briefly-masthead svg {
+  height: 18px;
+  fill: var(--content-base);
+}
+
+.briefly-date-header {
+  padding: var(--space-4) 0 var(--space-16);
+}
+
+/* Scroll stack */
+.briefly-card-stack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--briefly-card-gap);
+  padding: 0 var(--space-20);
+}
+
+/* Screen wrapper for prototype frames */
+.briefly-screen {
+  position: relative;
+  max-width: var(--briefly-page-max-width);
+  margin: 0 auto;
+  min-height: 812px;
+  background: var(--surface-background);
+  color: var(--content-base);
+  overflow: hidden;
+  border-radius: var(--radius-large);
+  border: 1px solid var(--surface-border-neutral-low);
+}
+
+/* Utility: visually hidden for a11y */
+.briefly-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}

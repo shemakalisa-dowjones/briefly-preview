@@ -1,0 +1,828 @@
+:root {
+  --radius-none: 0px;
+  --radius-round: 999px;
+  --space-0: 0px;
+  --space-2: 2px;
+  --space-4: 4px;
+  --space-6: 6px;
+  --space-8: 8px;
+  --space-12: 12px;
+  --space-16: 16px;
+  --space-20: 20px;
+  --space-24: 24px;
+  --space-32: 32px;
+  --space-40: 40px;
+  --space-48: 48px;
+  --space-64: 64px;
+  --space-80: 80px;
+  --space-120: 120px;
+  --space-160: 160px;
+}
+
+:root[data-theme='WSJ_00-Base'],
+[data-theme-zone][data-theme='WSJ_00-Base'] {
+  --fade-image-transparent: rgba(255, 255, 255, 0);
+  --fade-image-intense: rgba(0, 0, 0, 1);
+  --radius-xsmall: 2px;
+  --radius-small: 8px;
+  --radius-med: 16px;
+  --radius-large: 24px;
+  --comp-button-radius: 8px;
+  --type-display-med-family:
+    'DJ5EscrowComp', 'Noto Sans JP', 'Noto Sans SC', 'Noto Sans TC',
+    'Noto Sans KR', 'Noto Sans Arabic', 'Noto Sans Thai', serif;
+  --type-display-med-weight: 700;
+  --type-display-med-size: 64px;
+  --type-display-med-line-height: 72px;
+  --type-display-med-letter-spacing: 0px;
+  --type-article-headline-xsmall-family:
+    'Retina', 'Noto Sans JP', 'Noto Sans SC', 'Noto Sans TC', 'Noto Sans KR',
+    'Noto Sans Arabic', 'Noto Sans Thai', sans-serif;
+  --type-article-headline-xsmall-weight: 500;
+  --type-article-headline-xsmall-size: 16px;
+  --type-article-headline-xsmall-line-height: 22px;
+  --type-article-headline-xsmall-letter-spacing: 0px;
+  --type-article-headline-small-family:
+    'Escrow Condensed', 'Noto Sans JP', 'Noto Sans SC', 'Noto Sans TC',
+    'Noto Sans KR', 'Noto Sans Arabic', 'Noto Sans Thai', serif;
+  --type-article-headline-small-weight: 700;
+  --type-article-headline-small-size: 22px;
+  --type-article-headline-small-line-height: 26px;
+  --type-article-headline-small-letter-spacing: 0px;
+  --type-article-headline-med-family:
+    'DJ5EscrowComp', 'Noto Sans JP', 'Noto Sans SC', 'Noto Sans TC',
+    'Noto Sans KR', 'Noto Sans Arabic', 'Noto Sans Thai', serif;
+  --type-article-headline-large-family:
+    'DJ5EscrowComp', 'Noto Sans JP', 'Noto Sans SC', 'Noto Sans TC',
+    'Noto Sans KR', 'Noto Sans Arabic', 'Noto Sans Thai', serif;
+  --type-article-headline-large-weight: 700;
+  --type-article-headline-large-size: 36px;
+  --type-article-headline-large-line-height: 40px;
+  --type-article-headline-large-letter-spacing: 0px;
+  --type-article-headline-med-weight: 700;
+  --type-article-headline-med-size: 32px;
+  --type-article-headline-med-line-height: 36px;
+  --type-article-headline-med-letter-spacing: 0px;
+  --type-article-headline-xlarge-family:
+    'DJ5EscrowComp', 'Noto Sans JP', 'Noto Sans SC', 'Noto Sans TC',
+    'Noto Sans KR', 'Noto Sans Arabic', 'Noto Sans Thai', serif;
+  --type-article-headline-xlarge-weight: 700;
+  --type-article-headline-xlarge-size: 40px;
+  --type-article-headline-xlarge-line-height: 42px;
+  --type-article-headline-xlarge-letter-spacing: 0px;
+  --type-article-subheadline-xsmall-family:
+    'Retina', 'Noto Sans JP', 'Noto Sans SC', 'Noto Sans TC', 'Noto Sans KR',
+    'Noto Sans Arabic', 'Noto Sans Thai', sans-serif;
+  --type-article-subheadline-xsmall-weight: 400;
+  --type-article-subheadline-xsmall-size: 18px;
+  --type-article-subheadline-xsmall-line-height: 24px;
+  --type-article-subheadline-xsmall-letter-spacing: 0px;
+  --type-article-subheadline-small-family:
+    'Retina', 'Noto Sans JP', 'Noto Sans SC', 'Noto Sans TC', 'Noto Sans KR',
+    'Noto Sans Arabic', 'Noto Sans Thai', sans-serif;
+  --type-article-subheadline-small-weight: 500;
+  --type-article-subheadline-small-size: 18px;
+  --type-article-subheadline-small-line-height: 22px;
+  --type-article-subheadline-small-letter-spacing: 0px;
+  --type-article-subheadline-med-family:
+    'Escrow Condensed', 'Noto Sans JP', 'Noto Sans SC', 'Noto Sans TC',
+    'Noto Sans KR', 'Noto Sans Arabic', 'Noto Sans Thai', serif;
+  --type-article-subheadline-med-weight: 700;
+  --type-article-subheadline-med-size: 22px;
+  --type-article-subheadline-med-line-height: 28px;
+  --type-article-subheadline-med-letter-spacing: 0px;
+  --type-article-subheadline-large-family:
+    'Escrow Condensed', 'Noto Sans JP', 'Noto Sans SC', 'Noto Sans TC',
+    'Noto Sans KR', 'Noto Sans Arabic', 'Noto Sans Thai', serif;
+  --type-article-subheadline-large-weight: 700;
+  --type-article-subheadline-large-size: 30px;
+  --type-article-subheadline-large-line-height: 38px;
+  --type-article-subheadline-large-letter-spacing: 0px;
+  --type-article-subheadline-xlarge-family:
+    'Escrow Condensed', 'Noto Sans JP', 'Noto Sans SC', 'Noto Sans TC',
+    'Noto Sans KR', 'Noto Sans Arabic', 'Noto Sans Thai', serif;
+  --type-article-subheadline-xlarge-weight: 700;
+  --type-article-subheadline-xlarge-size: 32px;
+  --type-article-subheadline-xlarge-line-height: 36px;
+  --type-article-subheadline-xlarge-letter-spacing: 0px;
+  --type-article-paragraph-small-family:
+    'Exchange', 'Noto Sans JP', 'Noto Sans SC', 'Noto Sans TC', 'Noto Sans KR',
+    'Noto Sans Arabic', 'Noto Sans Thai', serif;
+  --type-article-paragraph-small-weight: 400;
+  --type-article-paragraph-small-size: 14px;
+  --type-article-paragraph-small-line-height: 20px;
+  --type-article-paragraph-small-letter-spacing: 0px;
+  --type-article-paragraph-med-family:
+    'Exchange', 'Noto Sans JP', 'Noto Sans SC', 'Noto Sans TC', 'Noto Sans KR',
+    'Noto Sans Arabic', 'Noto Sans Thai', serif;
+  --type-article-paragraph-med-weight: 400;
+  --type-article-paragraph-med-size: 16px;
+  --type-article-paragraph-med-line-height: 26px;
+  --type-article-paragraph-med-letter-spacing: 0px;
+  --type-article-paragraph-large-family:
+    'Exchange', 'Noto Sans JP', 'Noto Sans SC', 'Noto Sans TC', 'Noto Sans KR',
+    'Noto Sans Arabic', 'Noto Sans Thai', serif;
+  --type-article-paragraph-large-weight: 400;
+  --type-article-paragraph-large-size: 18px;
+  --type-article-paragraph-large-line-height: 28px;
+  --type-article-paragraph-large-letter-spacing: 0px;
+  --type-quote-small-family:
+    'Escrow Condensed', 'Noto Sans JP', 'Noto Sans SC', 'Noto Sans TC',
+    'Noto Sans KR', 'Noto Sans Arabic', 'Noto Sans Thai', serif;
+  --type-quote-small-weight: 700;
+  --type-quote-small-size: 22px;
+  --type-quote-small-line-height: 24px;
+  --type-quote-small-letter-spacing: 0px;
+  --type-quote-med-family:
+    'Escrow Condensed', 'Noto Sans JP', 'Noto Sans SC', 'Noto Sans TC',
+    'Noto Sans KR', 'Noto Sans Arabic', 'Noto Sans Thai', serif;
+  --type-quote-med-weight: 700;
+  --type-quote-med-size: 32px;
+  --type-quote-med-line-height: 40px;
+  --type-quote-med-letter-spacing: 0px;
+  --type-caption-med-family:
+    'Retina', 'Noto Sans JP', 'Noto Sans SC', 'Noto Sans TC', 'Noto Sans KR',
+    'Noto Sans Arabic', 'Noto Sans Thai', sans-serif;
+  --type-caption-med-weight: 400;
+  --type-caption-med-size: 14px;
+  --type-caption-med-line-height: 20px;
+  --type-caption-med-letter-spacing: 0px;
+  --type-source-med-family:
+    'Retina', 'Noto Sans JP', 'Noto Sans SC', 'Noto Sans TC', 'Noto Sans KR',
+    'Noto Sans Arabic', 'Noto Sans Thai', sans-serif;
+  --type-source-med-weight: 400;
+  --type-source-med-size: 12px;
+  --type-source-med-line-height: 20px;
+  --type-source-med-letter-spacing: 0px;
+  --type-overline-small-family:
+    'Retina Narrow', 'Noto Sans JP', 'Noto Sans SC', 'Noto Sans TC',
+    'Noto Sans KR', 'Noto Sans Arabic', 'Noto Sans Thai', sans-serif;
+  --type-overline-small-weight: 500;
+  --type-overline-small-size: 12px;
+  --type-overline-small-line-height: 16px;
+  --type-overline-small-letter-spacing: 0.8px;
+  --type-overline-med-family:
+    'Retina Narrow', 'Noto Sans JP', 'Noto Sans SC', 'Noto Sans TC',
+    'Noto Sans KR', 'Noto Sans Arabic', 'Noto Sans Thai', sans-serif;
+  --type-overline-med-weight: 500;
+  --type-overline-med-size: 16px;
+  --type-overline-med-line-height: 20px;
+  --type-overline-med-letter-spacing: 1.12px;
+  --type-overline-large-family:
+    'Retina Narrow', 'Noto Sans JP', 'Noto Sans SC', 'Noto Sans TC',
+    'Noto Sans KR', 'Noto Sans Arabic', 'Noto Sans Thai', sans-serif;
+  --type-overline-large-weight: 500;
+  --type-overline-large-size: 18px;
+  --type-overline-large-line-height: 24px;
+  --type-overline-large-letter-spacing: 1.74px;
+  --type-label-xsmall-family:
+    'Retina', 'Noto Sans JP', 'Noto Sans SC', 'Noto Sans TC', 'Noto Sans KR',
+    'Noto Sans Arabic', 'Noto Sans Thai', sans-serif;
+  --type-label-xsmall-weight: 400;
+  --type-label-xsmall-size: 10px;
+  --type-label-xsmall-line-height: 12px;
+  --type-label-xsmall-letter-spacing: 0px;
+  --type-label-small-family:
+    'Retina', 'Noto Sans JP', 'Noto Sans SC', 'Noto Sans TC', 'Noto Sans KR',
+    'Noto Sans Arabic', 'Noto Sans Thai', sans-serif;
+  --type-label-small-weight: 500;
+  --type-label-small-size: 12px;
+  --type-label-small-line-height: 14px;
+  --type-label-small-letter-spacing: 0px;
+  --type-label-med-family:
+    'Retina', 'Noto Sans JP', 'Noto Sans SC', 'Noto Sans TC', 'Noto Sans KR',
+    'Noto Sans Arabic', 'Noto Sans Thai', sans-serif;
+  --type-label-med-weight: 500;
+  --type-label-med-size: 14px;
+  --type-label-med-line-height: 16px;
+  --type-label-med-letter-spacing: 0px;
+  --type-label-large-family:
+    'Retina', 'Noto Sans JP', 'Noto Sans SC', 'Noto Sans TC', 'Noto Sans KR',
+    'Noto Sans Arabic', 'Noto Sans Thai', sans-serif;
+  --type-label-large-weight: 500;
+  --type-label-large-size: 16px;
+  --type-label-large-line-height: 18px;
+  --type-label-large-letter-spacing: 0px;
+  --type-body-small-family:
+    'Retina', 'Noto Sans JP', 'Noto Sans SC', 'Noto Sans TC', 'Noto Sans KR',
+    'Noto Sans Arabic', 'Noto Sans Thai', sans-serif;
+  --type-body-small-weight: 400;
+  --type-body-small-size: 12px;
+  --type-body-small-line-height: 18px;
+  --type-body-small-letter-spacing: 0px;
+  --type-body-med-family:
+    'Retina', 'Noto Sans JP', 'Noto Sans SC', 'Noto Sans TC', 'Noto Sans KR',
+    'Noto Sans Arabic', 'Noto Sans Thai', sans-serif;
+  --type-body-med-weight: 400;
+  --type-body-med-size: 14px;
+  --type-body-med-line-height: 20px;
+  --type-body-med-letter-spacing: 0px;
+  --type-body-large-family:
+    'Retina', 'Noto Sans JP', 'Noto Sans SC', 'Noto Sans TC', 'Noto Sans KR',
+    'Noto Sans Arabic', 'Noto Sans Thai', sans-serif;
+  --type-body-large-weight: 400;
+  --type-body-large-size: 16px;
+  --type-body-large-line-height: 22px;
+  --type-body-large-letter-spacing: 0px;
+  --type-detail-small-family:
+    'Retina', 'Noto Sans JP', 'Noto Sans SC', 'Noto Sans TC', 'Noto Sans KR',
+    'Noto Sans Arabic', 'Noto Sans Thai', sans-serif;
+  --type-detail-small-weight: 400;
+  --type-detail-small-size: 12px;
+  --type-detail-small-line-height: 16px;
+  --type-detail-small-letter-spacing: 0px;
+  --type-detail-med-family:
+    'Retina', 'Noto Sans JP', 'Noto Sans SC', 'Noto Sans TC', 'Noto Sans KR',
+    'Noto Sans Arabic', 'Noto Sans Thai', sans-serif;
+  --type-detail-med-weight: 400;
+  --type-detail-med-size: 14px;
+  --type-detail-med-line-height: 20px;
+  --type-detail-med-letter-spacing: 0px;
+  --type-detail-large-family:
+    'Retina', 'Noto Sans JP', 'Noto Sans SC', 'Noto Sans TC', 'Noto Sans KR',
+    'Noto Sans Arabic', 'Noto Sans Thai', sans-serif;
+  --type-detail-large-weight: 400;
+  --type-detail-large-size: 16px;
+  --type-detail-large-line-height: 24px;
+  --type-detail-large-letter-spacing: 0px;
+  --type-header-xsmall-family:
+    'Retina', 'Noto Sans JP', 'Noto Sans SC', 'Noto Sans TC', 'Noto Sans KR',
+    'Noto Sans Arabic', 'Noto Sans Thai', sans-serif;
+  --type-header-xsmall-weight: 500;
+  --type-header-xsmall-size: 16px;
+  --type-header-xsmall-line-height: 24px;
+  --type-header-xsmall-letter-spacing: 0px;
+  --type-header-small-family:
+    'Retina', 'Noto Sans JP', 'Noto Sans SC', 'Noto Sans TC', 'Noto Sans KR',
+    'Noto Sans Arabic', 'Noto Sans Thai', sans-serif;
+  --type-header-small-weight: 500;
+  --type-header-small-size: 18px;
+  --type-header-small-line-height: 22px;
+  --type-header-small-letter-spacing: 0px;
+  --type-header-med-family:
+    'Retina', 'Noto Sans JP', 'Noto Sans SC', 'Noto Sans TC', 'Noto Sans KR',
+    'Noto Sans Arabic', 'Noto Sans Thai', sans-serif;
+  --type-header-med-weight: 500;
+  --type-header-med-size: 20px;
+  --type-header-med-line-height: 24px;
+  --type-header-med-letter-spacing: 0px;
+  --type-header-large-family:
+    'Retina', 'Noto Sans JP', 'Noto Sans SC', 'Noto Sans TC', 'Noto Sans KR',
+    'Noto Sans Arabic', 'Noto Sans Thai', sans-serif;
+  --type-header-large-weight: 500;
+  --type-header-large-size: 24px;
+  --type-header-large-line-height: 28px;
+  --type-header-large-letter-spacing: 0px;
+  --type-header-xlarge-family:
+    'Retina', 'Noto Sans JP', 'Noto Sans SC', 'Noto Sans TC', 'Noto Sans KR',
+    'Noto Sans Arabic', 'Noto Sans Thai', sans-serif;
+  --type-header-xlarge-weight: 500;
+  --type-header-xlarge-size: 28px;
+  --type-header-xlarge-line-height: 32px;
+  --type-header-xlarge-letter-spacing: 0px;
+  --type-subheader-xsmall-family:
+    'Retina', 'Noto Sans JP', 'Noto Sans SC', 'Noto Sans TC', 'Noto Sans KR',
+    'Noto Sans Arabic', 'Noto Sans Thai', sans-serif;
+  --type-subheader-xsmall-weight: 400;
+  --type-subheader-xsmall-size: 14px;
+  --type-subheader-xsmall-line-height: 16px;
+  --type-subheader-xsmall-letter-spacing: 0px;
+  --type-subheader-small-family:
+    'Retina', 'Noto Sans JP', 'Noto Sans SC', 'Noto Sans TC', 'Noto Sans KR',
+    'Noto Sans Arabic', 'Noto Sans Thai', sans-serif;
+  --type-subheader-small-weight: 400;
+  --type-subheader-small-size: 16px;
+  --type-subheader-small-line-height: 20px;
+  --type-subheader-small-letter-spacing: 0px;
+  --type-subheader-med-family:
+    'Retina', 'Noto Sans JP', 'Noto Sans SC', 'Noto Sans TC', 'Noto Sans KR',
+    'Noto Sans Arabic', 'Noto Sans Thai', sans-serif;
+  --type-subheader-med-weight: 400;
+  --type-subheader-med-size: 18px;
+  --type-subheader-med-line-height: 24px;
+  --type-subheader-med-letter-spacing: 0px;
+  --type-subheader-large-family:
+    'Retina', 'Noto Sans JP', 'Noto Sans SC', 'Noto Sans TC', 'Noto Sans KR',
+    'Noto Sans Arabic', 'Noto Sans Thai', sans-serif;
+  --type-subheader-large-weight: 400;
+  --type-subheader-large-size: 20px;
+  --type-subheader-large-line-height: 24px;
+  --type-subheader-large-letter-spacing: 0px;
+  --type-subheader-xlarge-family:
+    'Retina', 'Noto Sans JP', 'Noto Sans SC', 'Noto Sans TC', 'Noto Sans KR',
+    'Noto Sans Arabic', 'Noto Sans Thai', sans-serif;
+  --type-subheader-xlarge-weight: 400;
+  --type-subheader-xlarge-size: 24px;
+  --type-subheader-xlarge-line-height: 28px;
+  --type-subheader-xlarge-letter-spacing: 0px;
+  --chart-title-family:
+    'Retina', 'Noto Sans JP', 'Noto Sans SC', 'Noto Sans TC', 'Noto Sans KR',
+    'Noto Sans Arabic', 'Noto Sans Thai', sans-serif;
+  --chart-title-weight: 700;
+  --chart-title-size: 18px;
+  --chart-title-line-height: 20px;
+  --chart-title-letter-spacing: 0px;
+  --chart-subtitle-family:
+    'Retina', 'Noto Sans JP', 'Noto Sans SC', 'Noto Sans TC', 'Noto Sans KR',
+    'Noto Sans Arabic', 'Noto Sans Thai', sans-serif;
+  --chart-subtitle-weight: 700;
+  --chart-subtitle-size: 14px;
+  --chart-subtitle-line-height: 20px;
+  --chart-subtitle-letter-spacing: 0px;
+  --comp-iconbutton-radius: 999px;
+  --comp-button-small-family:
+    'Retina', 'Noto Sans JP', 'Noto Sans SC', 'Noto Sans TC', 'Noto Sans KR',
+    'Noto Sans Arabic', 'Noto Sans Thai', sans-serif;
+  --comp-button-small-weight: 500;
+  --comp-button-small-size: 12px;
+  --comp-button-small-line-height: 16px;
+  --comp-button-small-letter-spacing: 0px;
+  --comp-button-med-family:
+    'Retina', 'Noto Sans JP', 'Noto Sans SC', 'Noto Sans TC', 'Noto Sans KR',
+    'Noto Sans Arabic', 'Noto Sans Thai', sans-serif;
+  --comp-button-med-weight: 500;
+  --comp-button-med-size: 14px;
+  --comp-button-med-line-height: 20px;
+  --comp-button-med-letter-spacing: 0px;
+  --comp-button-large-family:
+    'Retina', 'Noto Sans JP', 'Noto Sans SC', 'Noto Sans TC', 'Noto Sans KR',
+    'Noto Sans Arabic', 'Noto Sans Thai', sans-serif;
+  --comp-button-large-weight: 500;
+  --comp-button-large-size: 16px;
+  --comp-button-large-line-height: 24px;
+  --comp-button-large-letter-spacing: 0px;
+  --comp-tab-small-family:
+    'Retina', 'Noto Sans JP', 'Noto Sans SC', 'Noto Sans TC', 'Noto Sans KR',
+    'Noto Sans Arabic', 'Noto Sans Thai', sans-serif;
+  --comp-tab-small-weight: 500;
+  --comp-tab-small-size: 12px;
+  --comp-tab-small-line-height: 16px;
+  --comp-tab-small-letter-spacing: 0px;
+  --comp-tab-med-family:
+    'Retina', 'Noto Sans JP', 'Noto Sans SC', 'Noto Sans TC', 'Noto Sans KR',
+    'Noto Sans Arabic', 'Noto Sans Thai', sans-serif;
+  --comp-tab-med-weight: 500;
+  --comp-tab-med-size: 14px;
+  --comp-tab-med-line-height: 20px;
+  --comp-tab-med-letter-spacing: 0px;
+  --comp-tab-large-family:
+    'Retina', 'Noto Sans JP', 'Noto Sans SC', 'Noto Sans TC', 'Noto Sans KR',
+    'Noto Sans Arabic', 'Noto Sans Thai', sans-serif;
+  --comp-tab-large-weight: 500;
+  --comp-tab-large-size: 16px;
+  --comp-tab-large-line-height: 24px;
+  --comp-tab-large-letter-spacing: 0px;
+  --chart-axis-label-family:
+    'Retina', 'Noto Sans JP', 'Noto Sans SC', 'Noto Sans TC', 'Noto Sans KR',
+    'Noto Sans Arabic', 'Noto Sans Thai', sans-serif;
+  --chart-axis-label-weight: 400;
+  --chart-axis-label-size: 12px;
+  --chart-axis-label-line-height: 16px;
+  --chart-axis-label-letter-spacing: 0px;
+  --chart-axis-tick-family:
+    'Retina', 'Noto Sans JP', 'Noto Sans SC', 'Noto Sans TC', 'Noto Sans KR',
+    'Noto Sans Arabic', 'Noto Sans Thai', sans-serif;
+  --chart-axis-tick-weight: 400;
+  --chart-axis-tick-size: 12px;
+  --chart-axis-tick-line-height: 16px;
+  --chart-axis-tick-letter-spacing: 0px;
+  --chart-legend-family:
+    'Retina', 'Noto Sans JP', 'Noto Sans SC', 'Noto Sans TC', 'Noto Sans KR',
+    'Noto Sans Arabic', 'Noto Sans Thai', sans-serif;
+  --chart-legend-weight: 400;
+  --chart-legend-size: 12px;
+  --chart-legend-line-height: 16px;
+  --chart-legend-letter-spacing: 0px;
+  --chart-tooltip-header-family:
+    'Retina', 'Noto Sans JP', 'Noto Sans SC', 'Noto Sans TC', 'Noto Sans KR',
+    'Noto Sans Arabic', 'Noto Sans Thai', sans-serif;
+  --chart-tooltip-header-weight: 400;
+  --chart-tooltip-header-size: 12px;
+  --chart-tooltip-header-line-height: 16px;
+  --chart-tooltip-header-letter-spacing: 0px;
+  --chart-tooltip-value-family:
+    'Retina', 'Noto Sans JP', 'Noto Sans SC', 'Noto Sans TC', 'Noto Sans KR',
+    'Noto Sans Arabic', 'Noto Sans Thai', sans-serif;
+  --chart-tooltip-value-weight: 700;
+  --chart-tooltip-value-size: 12px;
+  --chart-tooltip-value-line-height: 16px;
+  --chart-tooltip-value-letter-spacing: 0px;
+}
+
+:root[data-theme='WSJ_00-Base'],
+[data-theme-zone][data-theme='WSJ_00-Base'] {
+  color-scheme: light;
+  --content-contrast: rgba(17, 17, 17, 1);
+  --surface-background: rgba(244, 245, 247, 1);
+  --surface-foreground: rgba(255, 255, 255, 1);
+  --surface-floating: rgba(255, 255, 255, 1);
+  --surface-neutral-xxlow: rgba(244, 245, 247, 1);
+  --surface-neutral-xlow: rgba(226, 226, 226, 1);
+  --surface-neutral-low: rgba(204, 204, 204, 1);
+  --surface-neutral-med: rgba(171, 171, 171, 1);
+  --surface-neutral-high: rgba(34, 34, 34, 1);
+  --surface-neutral-xhigh: rgba(17, 17, 17, 1);
+  --surface-primary-low: rgba(244, 245, 247, 1);
+  --surface-primary-high: rgba(51, 51, 51, 1);
+  --surface-alternative-low: rgba(240, 249, 254, 1);
+  --surface-alternative-high: rgba(1, 84, 131, 1);
+  --surface-positive-low: rgba(237, 242, 236, 1);
+  --surface-positive-high: rgba(10, 130, 0, 1);
+  --surface-negative-low: rgba(252, 230, 230, 1);
+  --surface-negative-high: rgba(225, 0, 0, 1);
+  --surface-attention-low: rgba(255, 248, 227, 1);
+  --surface-attention: rgba(255, 207, 61, 1);
+  --surface-border-inverse: rgba(255, 255, 255, 1);
+  --surface-border-neutral-low: rgba(235, 235, 235, 1);
+  --surface-border-neutral-med: rgba(204, 204, 204, 1);
+  --surface-border-neutral-high: rgba(34, 34, 34, 1);
+  --surface-border-primary-low: rgba(235, 235, 235, 1);
+  --surface-border-primary-high: rgba(51, 51, 51, 1);
+  --surface-border-alternative-low: rgba(226, 243, 254, 1);
+  --surface-border-alternative-high: rgba(1, 84, 131, 1);
+  --action-primary-xlow: rgba(244, 245, 247, 1);
+  --action-primary-low: rgba(235, 235, 235, 1);
+  --action-primary-med: rgba(85, 85, 85, 1);
+  --action-primary-high: rgba(51, 51, 51, 1);
+  --action-primary-xhigh: rgba(34, 34, 34, 1);
+  --action-alternative-xlow: rgba(240, 249, 254, 1);
+  --action-alternative-low: rgba(226, 243, 254, 1);
+  --action-alternative-med: rgba(1, 84, 131, 1);
+  --action-alternative-high: rgba(0, 51, 83, 1);
+  --action-alternative-xhigh: rgba(1, 40, 65, 1);
+  --action-neutral-xlow: rgba(255, 255, 255, 1);
+  --action-neutral-low: rgba(235, 235, 235, 1);
+  --action-neutral-med: rgba(85, 85, 85, 1);
+  --action-neutral-high: rgba(51, 51, 51, 1);
+  --action-neutral-xhigh: rgba(34, 34, 34, 1);
+  --action-positive-xlow: rgba(246, 248, 245, 1);
+  --action-positive-low: rgba(237, 242, 236, 1);
+  --action-positive-med: rgba(10, 130, 0, 1);
+  --action-positive-high: rgba(9, 110, 0, 1);
+  --action-positive-xhigh: rgba(6, 79, 0, 1);
+  --action-negative-xlow: rgba(255, 246, 245, 1);
+  --action-negative-low: rgba(252, 230, 230, 1);
+  --action-negative-med: rgba(225, 0, 0, 1);
+  --action-negative-high: rgba(186, 0, 0, 1);
+  --action-negative-xhigh: rgba(147, 2, 1, 1);
+  --action-inverse-xlow: rgba(27, 27, 27, 1);
+  --action-inverse-low: rgba(34, 34, 34, 1);
+  --action-inverse-med: rgba(204, 204, 204, 1);
+  --action-inverse-high: rgba(235, 235, 235, 1);
+  --action-inverse-xhigh: rgba(255, 255, 255, 1);
+  --action-disabled-low: rgba(235, 235, 235, 1);
+  --action-disabled-high: rgba(226, 226, 226, 1);
+  --action-focus: rgba(1, 84, 131, 1);
+  --content-base: rgba(34, 34, 34, 1);
+  --content-subtle: rgba(111, 111, 111, 1);
+  --content-nonessential: rgba(204, 204, 204, 1);
+  --content-inverse: rgba(255, 255, 255, 1);
+  --content-light-always: rgba(255, 255, 255, 1);
+  --content-dark-always: rgba(34, 34, 34, 1);
+  --content-primary-low: rgba(204, 204, 204, 1);
+  --content-primary-high: rgba(34, 34, 34, 1);
+  --content-alternative-low: rgba(102, 199, 255, 1);
+  --content-alternative-high: rgba(1, 84, 131, 1);
+  --content-positive-low: rgba(205, 234, 201, 1);
+  --content-negative-low: rgba(255, 179, 177, 1);
+  --content-positive-high: rgba(10, 130, 0, 1);
+  --content-negative-high: rgba(225, 0, 0, 1);
+  --content-attention-low: rgba(255, 248, 227, 1);
+  --content-attention-high: rgba(135, 100, 56, 1);
+  --gradient-neutral-stop0: rgba(244, 245, 247, 1);
+  --gradient-neutral-stop100: rgba(255, 255, 255, 1);
+  --opacity-low: rgba(0, 0, 0, 0.08);
+  --opacity-med: rgba(0, 0, 0, 0.12);
+  --opacity-high: rgba(0, 0, 0, 0.16);
+  --overlay-low: rgba(10, 10, 10, 0.08);
+  --overlay-med: rgba(10, 10, 10, 0.16);
+  --overlay-high: rgba(10, 10, 10, 0.75);
+  --shadow-bottom-low-x: 0px;
+  --shadow-bottom-low-y: 1px;
+  --shadow-bottom-low-blur: 2px;
+  --shadow-bottom-low-spread: 0px;
+  --shadow-bottom-low-shadowcolor: rgba(0, 0, 0, 0.06);
+  --shadow-bottom-med-x: 0px;
+  --shadow-bottom-med-y: 2px;
+  --shadow-bottom-med-blur: 6px;
+  --shadow-bottom-med-spread: 0px;
+  --shadow-bottom-med-shadowcolor: rgba(0, 0, 0, 0.09);
+  --shadow-bottom-high-x: 0px;
+  --shadow-bottom-high-y: 4px;
+  --shadow-bottom-high-blur: 8px;
+  --shadow-bottom-high-spread: 0px;
+  --shadow-bottom-high-shadowcolor: rgba(0, 0, 0, 0.12);
+  --shadow-bottom-xhigh-x: 0px;
+  --shadow-bottom-xhigh-y: 8px;
+  --shadow-bottom-xhigh-blur: 16px;
+  --shadow-bottom-xhigh-spread: 0px;
+  --shadow-bottom-xhigh-shadowcolor: rgba(0, 0, 0, 0.16);
+  --shadow-top-low-x: 0px;
+  --shadow-top-low-y: -2px;
+  --shadow-top-low-blur: 3px;
+  --shadow-top-low-spread: 0px;
+  --shadow-top-low-shadowcolor: rgba(0, 0, 0, 0.08);
+  --shadow-top-high-x: 0px;
+  --shadow-top-high-y: -4px;
+  --shadow-top-high-blur: 8px;
+  --shadow-top-high-spread: 0px;
+  --shadow-top-high-shadowcolor: rgba(0, 0, 0, 0.12);
+  --shadow-left-x: -4px;
+  --shadow-left-y: 0px;
+  --shadow-left-blur: 8px;
+  --shadow-left-spread: 0px;
+  --shadow-left-shadowcolor: rgba(0, 0, 0, 0.12);
+  --shadow-right-x: 2px;
+  --shadow-right-y: 0px;
+  --shadow-right-blur: 4px;
+  --shadow-right-spread: 0px;
+  --shadow-right-shadowcolor: rgba(0, 0, 0, 0.1);
+  --fade-foreground-transparent: rgba(255, 255, 255, 0);
+  --fade-foreground-intense: rgba(255, 255, 255, 1);
+  --comp-button-solid-primary-content: rgba(255, 255, 255, 1);
+  --comp-button-solid-primary-fill-base: rgba(34, 34, 34, 1);
+  --comp-button-solid-primary-fill-hover: rgba(85, 85, 85, 1);
+  --comp-button-solid-primary-fill-active: rgba(17, 17, 17, 1);
+  --comp-button-solid-neutral-content: rgba(255, 255, 255, 1);
+  --comp-button-solid-neutral-fill-base: rgba(34, 34, 34, 1);
+  --comp-button-solid-neutral-fill-hover: rgba(51, 51, 51, 1);
+  --comp-button-solid-neutral-fill-active: rgba(17, 17, 17, 1);
+  --comp-button-solid-inverse-content: rgba(34, 34, 34, 1);
+  --comp-button-solid-inverse-fill-base: rgba(235, 235, 235, 1);
+  --comp-button-solid-inverse-fill-hover: rgba(204, 204, 204, 1);
+  --comp-button-solid-inverse-fill-active: rgba(171, 171, 171, 1);
+  --comp-button-outline-minimal-primary-border: rgba(204, 204, 204, 1);
+  --comp-button-outline-minimal-primary-content: rgba(34, 34, 34, 1);
+  --comp-button-outline-minimal-primary-fill-hover: rgba(244, 245, 247, 1);
+  --comp-button-outline-minimal-primary-fill-active: rgba(235, 235, 235, 1);
+  --comp-button-outline-minimal-neutral-border: rgba(204, 204, 204, 1);
+  --comp-button-outline-minimal-neutral-content: rgba(34, 34, 34, 1);
+  --comp-button-outline-minimal-neutral-fill-hover: rgba(244, 245, 247, 1);
+  --comp-button-outline-minimal-neutral-fill-active: rgba(235, 235, 235, 1);
+  --comp-button-outline-minimal-inverse-border: rgba(235, 235, 235, 1);
+  --comp-button-outline-minimal-inverse-content: rgba(255, 255, 255, 1);
+  --comp-button-outline-minimal-inverse-fill-hover: rgba(27, 27, 27, 1);
+  --comp-button-outline-minimal-inverse-fill-active: rgba(34, 34, 34, 1);
+  --comp-button-outline-minimal-brand-border: rgba(2, 116, 182, 1);
+  --comp-button-outline-minimal-brand-content: rgba(1, 84, 131, 1);
+  --comp-button-outline-minimal-brand-fill-hover: rgba(244, 245, 247, 1);
+  --comp-button-outline-minimal-brand-fill-active: rgba(235, 235, 235, 1);
+  --blur-low: 15px;
+  --blur-overlay-low: rgba(255, 255, 255, 0.15);
+  --blur-high: 30px;
+  --blur-overlay-high: rgba(255, 255, 255, 0.3);
+  --chart-categorical-1: rgba(2, 163, 188, 1);
+  --chart-categorical-2: rgba(0, 97, 107, 1);
+  --chart-categorical-3: rgba(136, 201, 215, 1);
+  --chart-categorical-4: rgba(0, 0, 0, 1);
+  --chart-categorical-5: rgba(195, 227, 237, 1);
+  --chart-categorical-6: rgba(0, 128, 143, 1);
+  --chart-categorical-7: rgba(227, 240, 246, 1);
+  --chart-categorical-8: rgba(178, 90, 0, 1);
+  --chart-categorical-9: rgba(220, 115, 0, 1);
+  --chart-categorical-10: rgba(242, 199, 161, 1);
+  --chart-categorical-11: rgba(0, 0, 0, 1);
+  --chart-categorical-12: rgba(232, 161, 118, 1);
+  --chart-categorical-13: rgba(136, 65, 0, 1);
+  --chart-sequential-primary-xxlow: rgba(227, 240, 246, 1);
+  --chart-sequential-secondary-xxlow: rgba(247, 222, 202, 1);
+  --chart-sequential-secondary-xlow: rgba(242, 199, 161, 1);
+  --chart-sequential-secondary-low: rgba(232, 161, 118, 1);
+  --chart-sequential-secondary-medium: rgba(220, 115, 0, 1);
+  --chart-sequential-secondary-high: rgba(178, 90, 0, 1);
+  --chart-sequential-secondary-xhigh: rgba(136, 65, 0, 1);
+  --chart-sequential-primary-xlow: rgba(195, 227, 237, 1);
+  --chart-sequential-primary-low: rgba(136, 201, 215, 1);
+  --chart-sequential-primary-medium: rgba(2, 163, 188, 1);
+  --chart-sequential-primary-high: rgba(0, 128, 143, 1);
+  --chart-sequential-primary-xhigh: rgba(0, 97, 107, 1);
+  --chart-sequential-neutral-xxlow: rgba(238, 239, 240, 1);
+  --chart-sequential-neutral-xlow: rgba(226, 227, 228, 1);
+  --chart-sequential-neutral-low: rgba(191, 191, 191, 1);
+  --chart-sequential-neutral-medium: rgba(114, 114, 114, 1);
+  --chart-sequential-neutral-high: rgba(51, 51, 51, 1);
+  --chart-sequential-neutral-xhigh: rgba(0, 0, 0, 1);
+  --chart-sentiment-positive: rgba(10, 130, 0, 1);
+  --chart-structure-axis: rgba(171, 171, 171, 1);
+  --chart-structure-grid: rgba(226, 226, 226, 1);
+  --chart-structure-background: rgba(255, 255, 255, 1);
+  --chart-sentiment-negative: rgba(225, 0, 0, 1);
+  --chart-sentiment-attention: rgba(208, 165, 61, 1);
+  --comp-link-default-base: rgba(34, 34, 34, 1);
+  --comp-link-default-hover: rgba(111, 111, 111, 1);
+  --comp-link-default-active: rgba(204, 204, 204, 1);
+  --comp-input-unselected: rgba(145, 145, 145, 1);
+  --comp-input-base: rgba(1, 84, 131, 1);
+  --comp-input-hover: rgba(0, 51, 83, 1);
+  --comp-input-indicator: rgba(255, 255, 255, 1);
+  --gradient-primary-stop0: rgba(84, 180, 238, 1);
+  --gradient-primary-stop100: rgba(192, 232, 255, 1);
+}
+
+:root[data-theme='WSJ_00-Base'][data-theme-mode='dark'],
+:root[data-theme-mode='dark']
+  [data-theme-zone][data-theme='WSJ_00-Base']:not([data-theme-mode]),
+[data-theme-zone][data-theme='WSJ_00-Base'][data-theme-mode='dark'] {
+  color-scheme: dark;
+  --surface-background: rgba(17, 17, 17, 1);
+  --surface-foreground: rgba(34, 34, 34, 1);
+  --surface-floating: rgba(51, 51, 51, 1);
+  --surface-neutral-xxlow: rgba(17, 17, 17, 1);
+  --surface-neutral-xlow: rgba(17, 17, 17, 1);
+  --surface-neutral-low: rgba(42, 42, 42, 1);
+  --surface-neutral-med: rgba(111, 111, 111, 1);
+  --surface-neutral-high: rgba(244, 245, 247, 1);
+  --surface-neutral-xhigh: rgba(255, 255, 255, 1);
+  --surface-primary-low: rgba(51, 51, 51, 1);
+  --surface-primary-high: rgba(204, 204, 204, 1);
+  --surface-alternative-low: rgba(1, 84, 131, 1);
+  --surface-alternative-high: rgba(102, 199, 255, 1);
+  --surface-positive-low: rgba(6, 79, 0, 1);
+  --surface-positive-high: rgba(81, 198, 72, 1);
+  --surface-negative-low: rgba(65, 0, 0, 1);
+  --surface-negative-high: rgba(243, 95, 90, 1);
+  --surface-attention-low: rgba(208, 165, 61, 1);
+  --surface-attention-high: rgba(255, 248, 227, 1);
+  --surface-border-inverse: rgba(51, 51, 51, 1);
+  --surface-border-neutral-low: rgba(51, 51, 51, 1);
+  --surface-border-neutral-med: rgba(145, 145, 145, 1);
+  --surface-border-neutral-high: rgba(255, 255, 255, 1);
+  --surface-border-primary-low: rgba(51, 51, 51, 1);
+  --surface-border-primary-high: rgba(204, 204, 204, 1);
+  --surface-border-alternative-low: rgba(1, 84, 131, 1);
+  --surface-border-alternative-high: rgba(102, 199, 255, 1);
+  --action-primary-xlow: rgba(34, 34, 34, 1);
+  --action-primary-low: rgba(51, 51, 51, 1);
+  --action-primary-med: rgba(111, 111, 111, 1);
+  --action-primary-high: rgba(204, 204, 204, 1);
+  --action-primary-xhigh: rgba(244, 245, 247, 1);
+  --action-alternative-xlow: rgba(0, 29, 50, 1);
+  --action-alternative-low: rgba(1, 40, 65, 1);
+  --action-alternative-med: rgba(2, 116, 182, 1);
+  --action-alternative-high: rgba(102, 199, 255, 1);
+  --action-alternative-xhigh: rgba(240, 249, 254, 1);
+  --action-neutral-xlow: rgba(27, 27, 27, 1);
+  --action-neutral-low: rgba(51, 51, 51, 1);
+  --action-neutral-med: rgba(111, 111, 111, 1);
+  --action-neutral-high: rgba(204, 204, 204, 1);
+  --action-neutral-xhigh: rgba(255, 255, 255, 1);
+  --action-positive-xlow: rgba(4, 57, 2, 1);
+  --action-positive-low: rgba(6, 79, 0, 1);
+  --action-positive-med: rgba(10, 130, 0, 1);
+  --action-positive-high: rgba(25, 137, 14, 1);
+  --action-positive-xhigh: rgba(39, 152, 31, 1);
+  --action-negative-xlow: rgba(105, 0, 0, 1);
+  --action-negative-low: rgba(147, 2, 1, 1);
+  --action-negative-med: rgba(225, 0, 0, 1);
+  --action-negative-high: rgba(229, 38, 31, 1);
+  --action-negative-xhigh: rgba(237, 71, 64, 1);
+  --action-inverse-xlow: rgba(255, 255, 255, 1);
+  --action-inverse-low: rgba(235, 235, 235, 1);
+  --action-inverse-med: rgba(85, 85, 85, 1);
+  --action-inverse-high: rgba(27, 27, 27, 1);
+  --action-inverse-xhigh: rgba(17, 17, 17, 1);
+  --action-disabled-low: rgba(51, 51, 51, 1);
+  --action-disabled-high: rgba(85, 85, 85, 1);
+  --action-focus: rgba(20, 124, 189, 1);
+  --opacity-low: rgba(255, 255, 255, 0.1);
+  --opacity-med: rgba(255, 255, 255, 0.16);
+  --opacity-high: rgba(255, 255, 255, 0.22);
+  --overlay-low: rgba(255, 255, 255, 0.06);
+  --overlay-med: rgba(255, 255, 255, 0.12);
+  --overlay-high: rgba(255, 255, 255, 0.32);
+  --shadow-bottom-low-x: 0px;
+  --shadow-bottom-low-y: 1px;
+  --shadow-bottom-low-blur: 2px;
+  --shadow-bottom-low-spread: 0px;
+  --shadow-bottom-low-shadowcolor: rgba(0, 0, 0, 0.3);
+  --shadow-bottom-med-x: 0px;
+  --shadow-bottom-med-y: 2px;
+  --shadow-bottom-med-blur: 6px;
+  --shadow-bottom-med-spread: 0px;
+  --shadow-bottom-med-shadowcolor: rgba(0, 0, 0, 0.3);
+  --shadow-bottom-high-x: 0px;
+  --shadow-bottom-high-y: 4px;
+  --shadow-bottom-high-blur: 8px;
+  --shadow-bottom-high-spread: 0px;
+  --shadow-bottom-high-shadowcolor: rgba(0, 0, 0, 0.3);
+  --shadow-bottom-xhigh-x: 0px;
+  --shadow-bottom-xhigh-y: 8px;
+  --shadow-bottom-xhigh-blur: 16px;
+  --shadow-bottom-xhigh-spread: 0px;
+  --shadow-bottom-xhigh-shadowcolor: rgba(0, 0, 0, 0.3);
+  --shadow-top-low-x: 0px;
+  --shadow-top-low-y: -2px;
+  --shadow-top-low-blur: 3px;
+  --shadow-top-low-spread: 0px;
+  --shadow-top-low-shadowcolor: rgba(0, 0, 0, 0.4);
+  --shadow-top-high-x: 0px;
+  --shadow-top-high-y: -4px;
+  --shadow-top-high-blur: 8px;
+  --shadow-top-high-spread: 0px;
+  --shadow-top-high-shadowcolor: rgba(0, 0, 0, 0.45);
+  --shadow-left-x: -4px;
+  --shadow-left-y: 0px;
+  --shadow-left-blur: 8px;
+  --shadow-left-spread: 0px;
+  --shadow-left-shadowcolor: rgba(0, 0, 0, 0.45);
+  --shadow-right-x: 2px;
+  --shadow-right-y: 0px;
+  --shadow-right-blur: 4px;
+  --shadow-right-spread: 0px;
+  --shadow-right-shadowcolor: rgba(0, 0, 0, 0.42);
+  --fade-foreground-transparent: rgba(0, 0, 0, 0);
+  --fade-foreground-intense: rgba(34, 34, 34, 1);
+  --chart-sequential-neutral-xxlow: rgba(0, 0, 0, 1);
+  --chart-sequential-neutral-xlow: rgba(51, 51, 51, 1);
+  --chart-sequential-neutral-low: rgba(114, 114, 114, 1);
+  --chart-sequential-neutral-medium: rgba(191, 191, 191, 1);
+  --chart-sequential-neutral-high: rgba(226, 227, 228, 1);
+  --chart-sequential-neutral-xhigh: rgba(238, 239, 240, 1);
+  --content-contrast: rgba(255, 255, 255, 1);
+  --content-base: rgba(255, 255, 255, 1);
+  --content-subtle: rgba(204, 204, 204, 1);
+  --content-nonessential: rgba(111, 111, 111, 1);
+  --content-inverse: rgba(34, 34, 34, 1);
+  --content-light-always: rgba(255, 255, 255, 1);
+  --content-dark-always: rgba(34, 34, 34, 1);
+  --content-primary-low: rgba(34, 34, 34, 1);
+  --content-primary-high: rgba(255, 255, 255, 1);
+  --content-alternative-low: rgba(1, 84, 131, 1);
+  --content-alternative-high: rgba(102, 199, 255, 1);
+  --content-positive-low: rgba(6, 79, 0, 1);
+  --content-positive-high: rgba(81, 198, 72, 1);
+  --content-negative-low: rgba(147, 2, 1, 1);
+  --content-negative-high: rgba(243, 95, 90, 1);
+  --content-attention-low: rgba(135, 100, 56, 1);
+  --content-attention-high: rgba(255, 236, 177, 1);
+  --comp-button-solid-primary-content: rgba(34, 34, 34, 1);
+  --comp-button-solid-primary-fill-base: rgba(235, 235, 235, 1);
+  --comp-button-solid-primary-fill-hover: rgba(204, 204, 204, 1);
+  --comp-button-solid-primary-fill-active: rgba(171, 171, 171, 1);
+  --comp-button-solid-neutral-content: rgba(17, 17, 17, 1);
+  --comp-button-solid-neutral-fill-base: rgba(235, 235, 235, 1);
+  --comp-button-solid-neutral-fill-hover: rgba(204, 204, 204, 1);
+  --comp-button-solid-neutral-fill-active: rgba(171, 171, 171, 1);
+  --comp-button-solid-inverse-content: rgba(255, 255, 255, 1);
+  --comp-button-solid-inverse-fill-base: rgba(51, 51, 51, 1);
+  --comp-button-solid-inverse-fill-hover: rgba(27, 27, 27, 1);
+  --comp-button-solid-inverse-fill-active: rgba(17, 17, 17, 1);
+  --comp-button-outline-minimal-primary-border: rgba(85, 85, 85, 1);
+  --comp-button-outline-minimal-primary-content: rgba(255, 255, 255, 1);
+  --comp-button-outline-minimal-primary-fill-hover: rgba(27, 27, 27, 1);
+  --comp-button-outline-minimal-primary-fill-active: rgba(34, 34, 34, 1);
+  --comp-button-outline-minimal-neutral-border: rgba(85, 85, 85, 1);
+  --comp-button-outline-minimal-neutral-content: rgba(255, 255, 255, 1);
+  --comp-button-outline-minimal-neutral-fill-hover: rgba(27, 27, 27, 1);
+  --comp-button-outline-minimal-neutral-fill-active: rgba(34, 34, 34, 1);
+  --comp-button-outline-minimal-inverse-border: rgba(85, 85, 85, 1);
+  --comp-button-outline-minimal-inverse-content: rgba(17, 17, 17, 1);
+  --comp-button-outline-minimal-inverse-fill-hover: rgba(244, 245, 247, 1);
+  --comp-button-outline-minimal-inverse-fill-active: rgba(235, 235, 235, 1);
+  --gradient-neutral-stop0: rgba(118, 118, 118, 1);
+  --gradient-neutral-stop100: rgba(27, 27, 27, 1);
+  --comp-link-default-base: rgba(255, 255, 255, 1);
+  --comp-link-default-hover: rgba(235, 235, 235, 1);
+  --comp-link-default-active: rgba(204, 204, 204, 1);
+  --comp-input-unselected: rgba(51, 51, 51, 1);
+  --comp-input-base: rgba(2, 116, 182, 1);
+  --comp-input-hover: rgba(102, 199, 255, 1);
+  --comp-input-indicator: rgba(34, 34, 34, 1);
+  --gradient-primary-stop0: rgba(20, 124, 189, 1);
+  --gradient-primary-stop100: rgba(55, 152, 214, 1);
+  --blur-low: 15px;
+  --blur-overlay-low: rgba(0, 0, 0, 0.15);
+  --blur-high: 30px;
+  --blur-overlay-high: rgba(0, 0, 0, 0.3);
+  --chart-categorical-1: rgba(2, 163, 188, 1);
+  --chart-categorical-2: rgba(0, 97, 107, 1);
+  --chart-categorical-3: rgba(136, 201, 215, 1);
+  --chart-categorical-4: rgba(0, 0, 0, 1);
+  --chart-categorical-5: rgba(195, 227, 237, 1);
+  --chart-categorical-6: rgba(0, 128, 143, 1);
+  --chart-categorical-7: rgba(227, 240, 246, 1);
+  --chart-categorical-8: rgba(178, 90, 0, 1);
+  --chart-categorical-9: rgba(220, 115, 0, 1);
+  --chart-categorical-10: rgba(242, 199, 161, 1);
+  --chart-categorical-11: rgba(0, 0, 0, 1);
+  --chart-categorical-12: rgba(232, 161, 118, 1);
+  --chart-categorical-13: rgba(136, 65, 0, 1);
+  --chart-sequential-primary-xxlow: rgba(0, 97, 107, 1);
+  --chart-sequential-primary-xlow: rgba(0, 128, 143, 1);
+  --chart-sequential-primary-low: rgba(2, 163, 188, 1);
+  --chart-sequential-primary-medium: rgba(136, 201, 215, 1);
+  --chart-sequential-primary-high: rgba(195, 227, 237, 1);
+  --chart-sequential-primary-xhigh: rgba(227, 240, 246, 1);
+  --chart-sequential-secondary-xxlow: rgba(136, 65, 0, 1);
+  --chart-sequential-secondary-xlow: rgba(178, 90, 0, 1);
+  --chart-sequential-secondary-low: rgba(220, 115, 0, 1);
+  --chart-sequential-secondary-medium: rgba(232, 161, 118, 1);
+  --chart-sequential-secondary-high: rgba(242, 199, 161, 1);
+  --chart-sequential-secondary-xhigh: rgba(247, 222, 202, 1);
+  --chart-sentiment-positive: rgba(10, 130, 0, 1);
+  --chart-sentiment-negative: rgba(225, 0, 0, 1);
+  --chart-sentiment-attention: rgba(208, 165, 61, 1);
+  --chart-structure-axis: rgba(51, 51, 51, 1);
+  --chart-structure-grid: rgba(145, 145, 145, 1);
+  --chart-structure-background: rgba(34, 34, 34, 1);
+}
