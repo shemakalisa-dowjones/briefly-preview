@@ -894,14 +894,12 @@
 /* Cover page */
 .cover {
   max-width: 520px;
-  margin: 0 auto;
-  padding: 48px 32px 40px;
+  margin: 48px auto;
+  padding: 36px 32px 32px;
   font-family: system-ui, -apple-system, sans-serif;
   color: #1a1a1a;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
   background: #1a1a1a;
+  border-radius: 16px;
 }
 .cover-top {
   margin-bottom: 28px;
@@ -938,7 +936,6 @@
   max-width: 400px;
 }
 .cover-middle {
-  flex: 1;
   display: flex;
   flex-direction: column;
   gap: 24px;
