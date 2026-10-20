@@ -565,38 +565,49 @@ const COVER_STEPS = [
 function CoverPage({ onStart }) {
   return (
     <div className="cover">
-      <div className="cover-logo">The Wall Street Journal.</div>
-      <div className="cover-title">Briefly</div>
-      <div className="cover-subtitle">
-        AI-powered intelligence that keeps senior professionals ahead of the stories that matter to them — without the noise.
-      </div>
-
-      <div className="cover-persona">
-        <div className="cover-persona-avatar">
-          <UserCircle size={28} weight="fill" color="#888" />
-        </div>
-        <div>
-          <div className="cover-persona-name">Priya Menon</div>
-          <div className="cover-persona-role">Director of Corporate Development · Pre-Suite</div>
+      <div className="cover-top">
+        <div className="cover-logo">The Wall Street Journal.</div>
+        <hr className="cover-rule" />
+        <div className="cover-title">Briefly</div>
+        <div className="cover-subtitle">
+          AI-powered intelligence that keeps senior professionals ahead of the stories that matter to them — without the noise.
         </div>
       </div>
 
-      <div className="cover-journey">
-        <div className="cover-journey-title">The journey</div>
-        {COVER_STEPS.map((s, i) => (
-          <div key={i} className="cover-step">
-            <span className="cover-step-num">{i + 1}</span>
-            <div className="cover-step-text">
-              <div className="cover-step-label">{s.label}</div>
-              <div className="cover-step-desc">{s.desc}</div>
-            </div>
+      <div className="cover-middle">
+        <div className="cover-persona">
+          <div className="cover-persona-avatar">
+            <UserCircle size={26} weight="fill" color="#777" />
           </div>
-        ))}
+          <div>
+            <div className="cover-persona-name">Priya Menon</div>
+            <div className="cover-persona-role">Director of Corporate Development, Pre-Suite</div>
+          </div>
+        </div>
+
+        <div className="cover-journey">
+          <div className="cover-journey-title">The journey</div>
+          <div className="cover-steps">
+            {COVER_STEPS.map((s, i) => (
+              <div key={i} className="cover-step">
+                <span className="cover-step-num">{i + 1}</span>
+                <div className="cover-step-text">
+                  <div className="cover-step-label">{s.label}</div>
+                  <div className="cover-step-desc">{s.desc}</div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
 
-      <button className="cover-start" onClick={onStart}>
-        Start the journey <ArrowRight size={16} weight="bold" style={{ verticalAlign: '-2px', marginLeft: 6 }} />
-      </button>
+      <div className="cover-bottom">
+        <button className="cover-start" onClick={onStart}>
+          Start the journey
+          <ArrowRight size={16} weight="bold" style={{ verticalAlign: '-2px', marginLeft: 8 }} />
+        </button>
+        <div className="cover-note">Interactive prototype · Tap highlighted elements to advance</div>
+      </div>
     </div>
   );
 }
@@ -654,7 +665,7 @@ export default function App() {
             className={`proto-dot ${i === step ? 'active' : ''} ${i < step ? 'done' : ''}`}
             onClick={() => goTo(i)}
           >
-            <span className="dot-num">{i + 1}</span>
+            <span className="dot-bar" />
             <span className="dot-label">{m.label}</span>
           </button>
         ))}
