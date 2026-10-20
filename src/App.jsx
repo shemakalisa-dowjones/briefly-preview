@@ -25,11 +25,11 @@ import {
    Priya Menon — 5 moments, connected by hotspot taps.
 
    Flow:
-   M1 Briefing  → tap "Track this storyline" on card 2  → M2
-   M2 Sheet     → tap "Done"                             → M3
-   M3 Delta     → tap "Open in AI Mode"                  → M4
-   M4 AI Mode   → tap X close                            → M5
-   M5 Return    → tap "Track this too" on Economy card   → restart
+   1 Briefing    → tap "Track this storyline"       → 2
+   2 Track sheet → tap "Done"                        → 3
+   3 Delta Alert → tap "See Friday Briefing"         → 4
+   4 Fri Briefing→ tap "Ask AI" on World card        → 5
+   5 AI Mode     → tap X close                       → restart
    ================================================================ */
 
 const STEP_META = [
@@ -48,20 +48,20 @@ const STEP_META = [
   {
     label: 'Alert',
     time: 'Thu 2:47 p.m.',
-    hint: 'Tap "Open in AI Mode"',
+    hint: 'Tap "See your Friday briefing"',
     annotation: 'Two days later, Briefly surfaces a delta alert — only the developments that changed the picture since Tuesday, not a full recap.',
-  },
-  {
-    label: 'AI Mode',
-    time: 'Thu 2:53 p.m.',
-    hint: 'Tap X to close when you\'re done reading',
-    annotation: 'Priya asks a follow-up question in AI Mode. The answer is grounded in WSJ reporting with inline citations — not a generic LLM response.',
   },
   {
     label: 'Fri Briefing',
     time: 'Fri 7:02 a.m.',
-    hint: 'Tap "Track this too" on the Economy card to restart',
+    hint: 'Tap "Ask AI" on the World card',
     annotation: 'Friday\'s briefing reflects her tracked storyline — updated France card at the top with an alert badge, plus a related Economy story surfaced because of her interests.',
+  },
+  {
+    label: 'AI Mode',
+    time: 'Fri 7:08 a.m.',
+    hint: 'Tap X to close — you\'ve completed the journey',
+    annotation: 'Priya asks a follow-up question in AI Mode. The answer is grounded in WSJ reporting with inline citations — not a generic LLM response.',
   },
 ];
 
@@ -230,7 +230,7 @@ const BRIEFING_CARDS = [
   },
 ];
 
-function Moment1({ goNext, goToAI }) {
+function Moment1({ goNext }) {
   const [deeperCard, setDeeperCard] = useState(null);
 
   return (
@@ -264,7 +264,7 @@ function Moment1({ goNext, goToAI }) {
                   <BookmarkSimple size={14} /> Track this storyline
                 </button>
               )}
-              <button className="action-tertiary" onClick={goToAI}>
+              <button className="action-tertiary">
                 <Sparkle size={14} /> Ask AI
               </button>
             </div>
@@ -349,14 +349,14 @@ function Moment3({ goNext }) {
         </ul>
         <div className="delta-watch">What to watch: ECB Governing Council statement Friday — first signal on whether TPI activation is under discussion.</div>
         <div className="delta-actions">
-          <Hotspot onClick={goNext} label="Open in AI Mode">
+          <Hotspot onClick={goNext} label="See your Friday briefing">
             <button className="btn-primary hotspot-target" style={{ width: '100%', textAlign: 'center' }}>
-              <Sparkle size={16} weight="fill" style={{ verticalAlign: '-3px', marginRight: 6 }} />
-              Open in AI Mode
+              See your Friday briefing
+              <ArrowRight size={14} weight="bold" style={{ verticalAlign: '-2px', marginLeft: 6 }} />
             </button>
           </Hotspot>
           <button className="btn-tertiary" style={{ justifyContent: 'center', width: '100%' }}>
-            <SpeakerSimpleSlash size={16} /> Mute storyline
+            <Sparkle size={16} /> Open in AI Mode
           </button>
         </div>
       </div>
@@ -383,13 +383,13 @@ const SUGGESTIONS = [
   'Compare this to the 2012 eurozone crisis — what\'s different?',
 ];
 
-function Moment4({ goNext, goBack }) {
+function Moment4({ goNext }) {
   return (
     <div className="briefly-screen">
       <div style={{ padding: 20, display: 'flex', flexDirection: 'column', minHeight: '100%', background: 'var(--wsj-surface)' }}>
         <div className="ai-header">
           <div className="ai-title"><Sparkle size={16} weight="fill" /> AI Mode</div>
-          <Hotspot onClick={goBack || goNext} label="Close AI Mode">
+          <Hotspot onClick={goNext} label="Close AI Mode">
             <button className="ai-close hotspot-target"><X size={20} /></button>
           </Hotspot>
         </div>
@@ -479,7 +479,7 @@ const FRIDAY_CARDS = [
   },
 ];
 
-function Moment5({ goNext, goToAI }) {
+function Moment5({ goNext }) {
   const [deeperCard, setDeeperCard] = useState(null);
   const [showDelta, setShowDelta] = useState(false);
 
@@ -511,15 +511,15 @@ function Moment5({ goNext, goToAI }) {
                 <button className="action-primary go-deeper" onClick={() => setDeeperCard(c)}>
                   Go deeper <CaretRight size={12} weight="bold" />
                 </button>
-                {c.isAdjacent ? (
-                  <Hotspot onClick={goNext} label="Track this too">
-                    <button className="action-secondary hotspot-target">
-                      <BookmarkSimple size={14} /> Track this too
+                {c.isTracked ? (
+                  <Hotspot onClick={goNext} label="Ask AI">
+                    <button className="action-tertiary hotspot-target">
+                      <Sparkle size={14} /> Ask AI
                     </button>
                   </Hotspot>
                 ) : (
-                  <button className="action-tertiary" onClick={goToAI}>
-                    <Sparkle size={14} /> Ask AI
+                  <button className="action-secondary">
+                    <BookmarkSimple size={14} /> Track this storyline
                   </button>
                 )}
               </div>
@@ -558,8 +558,8 @@ const COVER_STEPS = [
   { label: 'Morning Briefing', desc: 'AI-synthesized storylines with the key "so what" up front' },
   { label: 'Track a Storyline', desc: 'With smart alerts, one tap to follow — Briefly extracts what to watch automatically' },
   { label: 'Delta Alert', desc: 'With smart alerts, 48 hours later she gets only the developments that changed the picture' },
-  { label: 'AI Mode', desc: 'Follow-up questions grounded in WSJ reporting, not generic LLM output' },
   { label: 'Personalized Briefing', desc: 'Friday\'s briefing adapts to what she\'s tracking' },
+  { label: 'AI Mode', desc: 'She digs deeper — follow-up questions grounded in WSJ reporting, not generic LLM output' },
 ];
 
 function CoverPage({ onStart }) {
@@ -614,19 +614,17 @@ function CoverPage({ onStart }) {
 
 /* ---- Main App ---- */
 
-const MOMENTS = [Moment1, Moment2, Moment3, Moment4, Moment5];
+const MOMENTS = [Moment1, Moment2, Moment3, Moment5, Moment4];
 
 export default function App() {
   const [started, setStarted] = useState(false);
   const [step, setStep] = useState(0);
-  const [prevStep, setPrevStep] = useState(null);
   const [transitioning, setTransitioning] = useState(false);
   const screenRef = useRef(null);
 
   function goTo(target) {
     setTransitioning(true);
     setTimeout(() => {
-      setPrevStep(step);
       setStep(target);
       setTransitioning(false);
       if (screenRef.current) screenRef.current.scrollTop = 0;
@@ -637,15 +635,6 @@ export default function App() {
     goTo((step + 1) % MOMENTS.length);
   }
 
-  function goToAI() {
-    goTo(3);
-  }
-
-  function goBack() {
-    if (prevStep != null) goTo(prevStep);
-    else advance();
-  }
-
   if (!started) return <CoverPage onStart={() => setStarted(true)} />;
 
   const ActiveMoment = MOMENTS[step];
@@ -654,7 +643,7 @@ export default function App() {
   return (
     <div className="proto-shell">
       <div className="proto-header">
-        <div className="proto-title">Briefly — Priya Menon</div>
+        <div className="proto-title">Your Daily Brief — Priya Menon</div>
         <div className="proto-subtitle">Director of Corporate Development, Pre-Suite</div>
       </div>
 
@@ -685,7 +674,7 @@ export default function App() {
         ref={screenRef}
         className={`proto-viewport ${transitioning ? 'fading' : ''}`}
       >
-        <ActiveMoment goNext={advance} goToAI={goToAI} goBack={goBack} />
+        <ActiveMoment goNext={advance} />
       </div>
     </div>
   );
