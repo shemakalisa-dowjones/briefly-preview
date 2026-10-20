@@ -892,23 +892,24 @@
 .cover {
   max-width: 520px;
   margin: 0 auto;
-  padding: 64px 32px 48px;
+  padding: 48px 32px 40px;
   font-family: system-ui, -apple-system, sans-serif;
-  color: #fff;
+  color: #1a1a1a;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  background: #1a1a1a;
 }
 .cover-top {
-  margin-bottom: 48px;
+  margin-bottom: 28px;
 }
 .cover-logo {
   font-family: Georgia, serif;
   font-size: 13px;
   font-weight: 700;
   letter-spacing: 0.5px;
-  color: #666;
-  margin-bottom: 40px;
+  color: #999;
+  margin-bottom: 24px;
 }
 .cover-rule {
   width: 40px;
@@ -916,54 +917,59 @@
   background: #c00;
   border: none;
   border-radius: 0;
-  margin: 0 0 20px;
+  margin: 0 0 16px;
 }
 .cover-title {
   font-family: Georgia, serif;
-  font-size: 40px;
+  font-size: 38px;
   font-weight: 700;
-  line-height: 1.15;
+  line-height: 1.1;
   letter-spacing: -0.5px;
-  margin-bottom: 12px;
+  color: #fff;
+  margin-bottom: 10px;
 }
 .cover-subtitle {
-  font-size: 17px;
-  color: #aaa;
-  line-height: 1.6;
-  max-width: 420px;
+  font-size: 16px;
+  color: #999;
+  line-height: 1.55;
+  max-width: 400px;
 }
 .cover-middle {
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  gap: 24px;
 }
 .cover-persona {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 12px;
   text-align: left;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 10px;
+  padding: 12px 14px;
 }
 .cover-persona-avatar {
-  width: 44px;
-  height: 44px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #333 0%, #222 100%);
-  border: 2px solid #444;
+  background: #2a2a2a;
+  border: 1.5px solid #444;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
 }
 .cover-persona-name {
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 600;
   color: #fff;
   margin-bottom: 1px;
 }
 .cover-persona-role {
   font-size: 13px;
-  color: #888;
+  color: #999;
   line-height: 1.3;
 }
 .cover-journey {
@@ -974,63 +980,62 @@
   font-weight: 600;
   letter-spacing: 1.2px;
   text-transform: uppercase;
-  color: #555;
-  margin-bottom: 16px;
+  color: #666;
+  margin-bottom: 10px;
 }
 .cover-steps {
   display: flex;
   flex-direction: column;
   gap: 0;
-  counter-reset: step;
 }
 .cover-step {
   display: flex;
-  gap: 16px;
-  padding: 14px 0;
-  border-top: 1px solid rgba(255,255,255,0.07);
+  gap: 14px;
+  padding: 11px 0;
+  border-top: 1px solid rgba(255,255,255,0.08);
   align-items: flex-start;
 }
-.cover-step:last-child { border-bottom: 1px solid rgba(255,255,255,0.07); }
+.cover-step:last-child { border-bottom: 1px solid rgba(255,255,255,0.08); }
 .cover-step-num {
-  width: 28px;
-  height: 28px;
+  width: 26px;
+  height: 26px;
   border-radius: 50%;
-  border: 1.5px solid #444;
+  border: 1.5px solid #555;
   background: transparent;
-  color: #888;
+  color: #999;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 600;
   flex-shrink: 0;
-  margin-top: 0;
+  margin-top: 1px;
 }
 .cover-step-text {
   flex: 1;
-  padding-top: 3px;
+  padding-top: 2px;
 }
 .cover-step-label {
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 600;
-  color: #eee;
-  margin-bottom: 3px;
+  color: #fff;
+  margin-bottom: 2px;
 }
 .cover-step-desc {
-  font-size: 13px;
-  color: #777;
-  line-height: 1.45;
+  font-size: 12px;
+  color: #888;
+  line-height: 1.4;
 }
 .cover-bottom {
-  padding-top: 36px;
+  padding-top: 28px;
 }
 .cover-start {
   background: #fff;
   color: #1a1a1a;
   border: none;
-  border-radius: 12px;
-  padding: 16px 32px;
-  font-size: 16px;
+  border-radius: 10px;
+  padding: 14px 32px;
+  font-size: 15px;
   font-weight: 600;
   cursor: pointer;
   transition: transform 0.15s ease, opacity 0.15s ease;
@@ -1040,10 +1045,10 @@
 .cover-start:hover { opacity: 0.9; transform: translateY(-1px); }
 .cover-start:active { transform: translateY(0); }
 .cover-note {
-  font-size: 12px;
-  color: #555;
+  font-size: 11px;
+  color: #666;
   text-align: center;
-  margin-top: 12px;
+  margin-top: 10px;
   line-height: 1.5;
 }
 
