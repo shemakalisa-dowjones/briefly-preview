@@ -166,7 +166,7 @@ const BRIEFING_CARDS = [
   {
     eyebrow: 'MARKETS',
     lede: 'The AI trade is fracturing along a credit line, separating the builders who borrowed from the giants who didn\'t.',
-    body: 'CoreWeave shares slid again Monday, with its 2030 bonds yielding close to 15%, while data-center bonds leased to the same company yield around 8% — a gap that shows investors trust the physical asset more than the tenant, according to Heard on the Street.\n\nMicrosoft pulled out of a U.K. data-center deal with Nscale over power-grid delays, demonstrating how quickly clients can walk when projects stall.\n\n"I have high conviction that the AI trade will roll over — and roll over hard," Vanguard\'s Timothy Casaletto told the Journal. Macquarie warned that a Fed rate hike and AI funding issues raise risks of an AI capex slowdown in 2027.',
+    body: 'CoreWeave\'s 2030 bonds now yield close to 15% while data-center bonds leased to the same company yield around 8% — investors trust the building more than the tenant. Microsoft pulled out of a U.K. data-center deal over power-grid delays, showing how quickly clients can walk.\n\nVanguard\'s Timothy Casaletto says he has "high conviction the AI trade will roll over — hard." Macquarie warns a rate hike plus funding issues raise risks of an AI capex slowdown by 2027.',
     deeper: {
       sources: [
         { title: 'The Credit Line Splitting the AI Trade in Two', pub: 'WSJ · Heard on the Street', time: '6:30 a.m.' },
@@ -186,7 +186,7 @@ const BRIEFING_CARDS = [
   {
     eyebrow: 'WORLD',
     lede: 'France\'s worst riots in years are simultaneously destabilizing its bond market and clearing Marine Le Pen\'s path to the presidency.',
-    body: 'More than 3,000 stores were damaged or looted over the weekend, nearly 1,000 police were injured, and the 19th-century town hall in Limoges burned on live TV.\n\nThe 10-year French OAT yield jumped 14 basis points Monday to 4.925%, pushing the spread over German bunds to 148 basis points — the widest since the eurozone debt crisis era. Le Pen released a video address styled like a presidential broadcast, casting the chaos as proof of Macron\'s "powerlessness."\n\nEconomists at UBS and AXA say a full eurozone contagion is unlikely thanks to the ECB\'s Transmission Protection Instrument, but the franc-zone premium is rising fast.',
+    body: 'Over 3,000 stores damaged, nearly 1,000 police injured, and the 19th-century town hall in Limoges burned on live TV. The OAT–bund spread blew out to 148 basis points — the widest since the eurozone debt crisis — after yields jumped 14bp Monday.\n\nLe Pen released a video styled as a presidential broadcast, casting the chaos as proof of Macron\'s "powerlessness." UBS and AXA say full contagion is unlikely thanks to the ECB\'s safety net, but the risk premium is rising fast.',
     deeper: {
       sources: [
         { title: 'France Riots Push Bond Spread to Crisis-Era Levels', pub: 'WSJ', time: 'Mon 11:45 a.m.' },
@@ -347,7 +347,7 @@ function Moment3({ goNext }) {
 const AI_MESSAGES = [
   {
     q: 'How likely is full eurozone contagion from the France crisis?',
-    a: "Low probability, but the tail risk is rising. The ECB's Transmission Protection Instrument (TPI) exists precisely for this scenario — it lets the central bank buy sovereign bonds of member states facing disorderly spread widening.\n\nBut TPI has never been activated. Its conditions require the country to comply with EU fiscal rules, and France is in an excessive deficit procedure. UBS and AXA economists say the ECB would likely bend this requirement if spreads blow through 200bp.\n\nThe bigger risk: political, not financial. If Le Pen wins the presidency and demands fiscal sovereignty, markets would price in redenomination risk — something TPI wasn't designed for.",
+    a: "Low probability, but the tail risk is rising. The ECB's TPI lets the central bank buy sovereign bonds of states facing disorderly spread widening — but it has never been activated, and France's excessive deficit may complicate eligibility.\n\nUBS and AXA say the ECB would likely bend the rules if spreads blow through 200bp. The bigger risk is political: if Le Pen wins and demands fiscal sovereignty, markets would price in redenomination risk — something TPI wasn't designed for.",
     sources: [
       { title: 'France Riots Push Bond Spread to Crisis-Era Levels', pub: 'WSJ' },
       { title: "ECB's Untested Safety Net Faces Its First Real Challenge", pub: "Barron's" },
@@ -412,7 +412,7 @@ const FRIDAY_CARDS = [
   {
     eyebrow: 'WORLD',
     lede: 'Where it stands: France\'s political crisis is accelerating faster than its bond market can price.',
-    body: 'Le Pen\'s approval hit 41% Thursday, her highest ever. Polls show she would beat far-left rival Jean-Luc Mélenchon handily in a runoff.\n\nThe OAT–bund spread closed at 155bp after Moody\'s placed France on negative outlook. ECB President Lagarde said TPI remains "available" but stopped short of committing to activation.',
+    body: 'Le Pen\'s approval hit 41% — her highest ever — after Moody\'s placed France on negative outlook and the OAT–bund spread widened to 155bp.\n\nLagarde said the ECB\'s safety net remains "available" but stopped short of committing to activation. The gap between rhetoric and action is the risk to watch.',
     state: 'tracked',
     showTrack: false,
     showAlert: true,
@@ -436,7 +436,7 @@ const FRIDAY_CARDS = [
   {
     eyebrow: 'ECONOMY',
     lede: 'High mortgage rates are splitting the U.S. housing market into two economies: a frozen entry level and a cash-fueled luxury tier.',
-    body: 'Builder confidence fell to 29 in October, the lowest since June 2012, with 43% of builders cutting prices — the highest share since 2020, according to the NAHB.\n\nToll Brothers reported a $996,000 average selling price in Q3, with 25% of buyers paying all cash. Roughly three-quarters of WSJ-surveyed economists expect the 10-year yield to end the year at 5% or higher, and more than a third see it staying there through 2027.',
+    body: 'Builder confidence fell to 29 — the lowest since 2012 — with 43% cutting prices. Meanwhile Toll Brothers posted a $996K average selling price in Q3, with a quarter of buyers paying all cash.\n\nThree-quarters of WSJ-surveyed economists expect the 10-year yield at 5%+ through year-end, meaning relief for entry-level buyers isn\'t coming soon.',
     isAdjacent: true,
     deeper: {
       sources: [
