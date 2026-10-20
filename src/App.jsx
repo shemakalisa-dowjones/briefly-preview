@@ -556,8 +556,8 @@ function Moment5({ goNext, goToAI }) {
 
 const COVER_STEPS = [
   { label: 'Morning Briefing', desc: 'AI-synthesized storylines with the key "so what" up front' },
-  { label: 'Track a Storyline', desc: 'One tap to follow — Briefly extracts what to watch automatically' },
-  { label: 'Delta Alert', desc: '48 hours later, only the developments that changed the picture' },
+  { label: 'Track a Storyline', desc: 'With smart alerts, one tap to follow — Briefly extracts what to watch automatically' },
+  { label: 'Delta Alert', desc: 'With smart alerts, 48 hours later she gets only the developments that changed the picture' },
   { label: 'AI Mode', desc: 'Follow-up questions grounded in WSJ reporting, not generic LLM output' },
   { label: 'Personalized Briefing', desc: 'Friday\'s briefing adapts to what she\'s tracking' },
 ];
