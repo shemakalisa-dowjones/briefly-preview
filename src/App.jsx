@@ -244,7 +244,7 @@ const BRIEFING_CARDS = [
   },
 ];
 
-function BriefingScreen({ cards, title, date, children }) {
+function BriefingScreen({ title, date, overlay, children }) {
   return (
     <div className="briefly-screen">
       <div className="briefly-page-header">
@@ -255,10 +255,10 @@ function BriefingScreen({ cards, title, date, children }) {
         </div>
       </div>
       <div className="briefly-card-stack">
-        {cards}
+        {children}
       </div>
       <BottomNav />
-      {children}
+      {overlay}
     </div>
   );
 }
@@ -299,8 +299,55 @@ function MomentBriefing({ goNext }) {
 
 function MomentDeeper({ goNext }) {
   const card = BRIEFING_CARDS[0];
+  const sheet = (
+    <div className="deeper-overlay">
+      <div className="deeper-sheet" onClick={e => e.stopPropagation()}>
+        <div className="sheet-handle" />
+        <div className="deeper-header">
+          <div className="deeper-eyebrow">{card.eyebrow}</div>
+          <Hotspot onClick={goNext} label="Close Go Deeper">
+            <button className="ai-close hotspot-target"><X size={18} /></button>
+          </Hotspot>
+        </div>
+        <hr className="sheet-rule" />
+        <div className="deeper-section">
+          <div className="deeper-section-label"><Article size={12} weight="bold" /> Source articles</div>
+          <div className="deeper-sources">
+            {card.deeper.sources.map((s, i) => (
+              <div key={i} className="deeper-source">
+                <div className="deeper-source-title">{s.title}</div>
+                <div className="deeper-source-meta">{s.pub} · {s.time}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className="deeper-section">
+          <div className="deeper-section-label"><UserCircle size={12} weight="bold" /> Key people</div>
+          <div className="deeper-people">
+            {card.deeper.people.map((p, i) => (
+              <div key={i} className="deeper-person">
+                <div className="deeper-person-name">{p.name}</div>
+                <div className="deeper-person-role">{p.role}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className="deeper-section">
+          <div className="deeper-section-label"><TrendUp size={12} weight="bold" /> Key numbers</div>
+          <div className="deeper-numbers">
+            {card.deeper.numbers.map((n, i) => (
+              <div key={i} className="deeper-number">
+                <div className="deeper-number-value">{n.value}</div>
+                <div className="deeper-number-label">{n.label}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
   return (
-    <BriefingScreen title="Your Tuesday Briefing" date="October 7, 2026">
+    <BriefingScreen title="Your Tuesday Briefing" date="October 7, 2026" overlay={sheet}>
       {BRIEFING_CARDS.map((c, i) => (
         <article key={i} className="storyline-card">
           <div className="card-eyebrow">{c.eyebrow}</div>
@@ -320,51 +367,6 @@ function MomentDeeper({ goNext }) {
           </div>
         </article>
       ))}
-      <div className="deeper-overlay">
-        <div className="deeper-sheet" onClick={e => e.stopPropagation()}>
-          <div className="sheet-handle" />
-          <div className="deeper-header">
-            <div className="deeper-eyebrow">{card.eyebrow}</div>
-            <Hotspot onClick={goNext} label="Close Go Deeper">
-              <button className="ai-close hotspot-target"><X size={18} /></button>
-            </Hotspot>
-          </div>
-          <hr className="sheet-rule" />
-          <div className="deeper-section">
-            <div className="deeper-section-label"><Article size={12} weight="bold" /> Source articles</div>
-            <div className="deeper-sources">
-              {card.deeper.sources.map((s, i) => (
-                <div key={i} className="deeper-source">
-                  <div className="deeper-source-title">{s.title}</div>
-                  <div className="deeper-source-meta">{s.pub} · {s.time}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-          <div className="deeper-section">
-            <div className="deeper-section-label"><UserCircle size={12} weight="bold" /> Key people</div>
-            <div className="deeper-people">
-              {card.deeper.people.map((p, i) => (
-                <div key={i} className="deeper-person">
-                  <div className="deeper-person-name">{p.name}</div>
-                  <div className="deeper-person-role">{p.role}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-          <div className="deeper-section">
-            <div className="deeper-section-label"><TrendUp size={12} weight="bold" /> Key numbers</div>
-            <div className="deeper-numbers">
-              {card.deeper.numbers.map((n, i) => (
-                <div key={i} className="deeper-number">
-                  <div className="deeper-number-value">{n.value}</div>
-                  <div className="deeper-number-label">{n.label}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </div>
     </BriefingScreen>
   );
 }
