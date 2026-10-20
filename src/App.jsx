@@ -22,37 +22,51 @@ import {
 
 /* ================================================================
    INTERACTIVE CLICKABLE PROTOTYPE
-   Priya Menon — 5 moments, connected by hotspot taps.
+   Priya Menon — 6 moments, connected by hotspot taps.
 
    Flow:
-   1 Briefing    → tap "Track this storyline"       → 2
-   2 Track sheet → tap "Done"                        → 3
-   3 Delta Alert → tap "See Friday Briefing"         → 4
-   4 Fri Briefing→ tap "Ask AI" on World card        → 5
-   5 AI Mode     → tap X close                       → restart
+   1 Briefing    → tap "Go deeper" on Markets card   → 2
+   2 Go Deeper   → tap X to close the sheet           → 3
+   3 Track       → tap "Track this storyline" (World) → 4
+   4 Smart Alert → tap "Done" to confirm              → 5
+   5 Delta Alert → tap "See your Friday briefing"     → 6
+   6 Fri Briefing→ tap "Ask AI" on World card         → 7
+   7 AI Mode     → tap X to close                     → restart
    ================================================================ */
 
 const STEP_META = [
   {
     label: 'Briefing',
     time: 'Tue 7:04 a.m.',
-    hint: 'Tap "Track this storyline" on the World card',
+    hint: 'Tap "Go deeper" on the Markets card',
     annotation: 'Priya opens her morning briefing — AI-synthesized storylines with the key "so what" up front. She can go deeper on any story or track ones she wants to follow.',
   },
   {
+    label: 'Go Deeper',
+    time: 'Tue 7:05 a.m.',
+    hint: 'Tap X to close the sheet',
+    annotation: 'Go Deeper reveals source articles, key people, and key numbers behind the storyline — giving Priya the full picture without leaving the briefing.',
+  },
+  {
     label: 'Track',
-    time: 'Tue 7:11 a.m.',
+    time: 'Tue 7:06 a.m.',
+    hint: 'Tap "Track this storyline" on the World card',
+    annotation: 'Back in the briefing, Priya decides to track the France crisis. One tap — Briefly will watch this storyline for her.',
+  },
+  {
+    label: 'Smart Alert',
+    time: 'Tue 7:07 a.m.',
     hint: 'Tap "Done" to confirm tracking',
     annotation: 'Briefly confirms what it will watch — specific entities, signals, and themes extracted from the storyline. No configuration needed.',
   },
   {
-    label: 'Alert',
+    label: 'Delta',
     time: 'Thu 2:47 p.m.',
     hint: 'Tap "See your Friday briefing"',
     annotation: 'Two days later, Briefly surfaces a delta alert — only the developments that changed the picture since Tuesday, not a full recap.',
   },
   {
-    label: 'Fri Briefing',
+    label: 'Fri Brief',
     time: 'Fri 7:02 a.m.',
     hint: 'Tap "Ask AI" on the World card',
     annotation: 'Friday\'s briefing reflects her tracked storyline — updated France card at the top with an alert badge, plus a related Economy story surfaced because of her interests.',
@@ -230,50 +244,162 @@ const BRIEFING_CARDS = [
   },
 ];
 
-function Moment1({ goNext }) {
-  const [deeperCard, setDeeperCard] = useState(null);
-
+function BriefingScreen({ cards, title, date, children }) {
   return (
     <div className="briefly-screen">
       <div className="briefly-page-header">
         <Masthead />
         <div className="briefly-date-header">
-          <h1 className="page-title">Your Tuesday Briefing</h1>
-          <p className="page-date">October 7, 2026</p>
+          <h1 className="page-title">{title}</h1>
+          <p className="page-date">{date}</p>
         </div>
       </div>
       <div className="briefly-card-stack">
-        {BRIEFING_CARDS.map((c, i) => (
-          <article key={i} className="storyline-card">
-            <div className="card-eyebrow">{c.eyebrow}</div>
-            <p className="card-body-wrap">
-              <strong className="card-lede">{c.lede}</strong>{' '}{c.body}
-            </p>
-            <div className="card-actions">
-              <button className="action-primary go-deeper" onClick={() => setDeeperCard(c)}>
-                Go deeper <CaretRight size={12} weight="bold" />
-              </button>
-              {i === 1 ? (
-                <Hotspot onClick={goNext} label="Track this storyline">
-                  <button className="action-secondary hotspot-target">
-                    <BookmarkSimple size={14} /> Track this storyline
-                  </button>
-                </Hotspot>
-              ) : (
-                <button className="action-secondary">
-                  <BookmarkSimple size={14} /> Track this storyline
-                </button>
-              )}
-              <button className="action-tertiary">
-                <Sparkle size={14} /> Ask AI
-              </button>
-            </div>
-          </article>
-        ))}
+        {cards}
       </div>
       <BottomNav />
-      <DeeperSheet card={deeperCard} onClose={() => setDeeperCard(null)} />
+      {children}
     </div>
+  );
+}
+
+function MomentBriefing({ goNext }) {
+  return (
+    <BriefingScreen title="Your Tuesday Briefing" date="October 7, 2026">
+      {BRIEFING_CARDS.map((c, i) => (
+        <article key={i} className="storyline-card">
+          <div className="card-eyebrow">{c.eyebrow}</div>
+          <p className="card-body-wrap">
+            <strong className="card-lede">{c.lede}</strong>{' '}{c.body}
+          </p>
+          <div className="card-actions">
+            {i === 0 ? (
+              <Hotspot onClick={goNext} label="Go deeper">
+                <button className="action-primary go-deeper hotspot-target">
+                  Go deeper <CaretRight size={12} weight="bold" />
+                </button>
+              </Hotspot>
+            ) : (
+              <button className="action-primary go-deeper">
+                Go deeper <CaretRight size={12} weight="bold" />
+              </button>
+            )}
+            <button className="action-secondary">
+              <BookmarkSimple size={14} /> Track this storyline
+            </button>
+            <button className="action-tertiary">
+              <Sparkle size={14} /> Ask AI
+            </button>
+          </div>
+        </article>
+      ))}
+    </BriefingScreen>
+  );
+}
+
+function MomentDeeper({ goNext }) {
+  const card = BRIEFING_CARDS[0];
+  return (
+    <BriefingScreen title="Your Tuesday Briefing" date="October 7, 2026">
+      {BRIEFING_CARDS.map((c, i) => (
+        <article key={i} className="storyline-card">
+          <div className="card-eyebrow">{c.eyebrow}</div>
+          <p className="card-body-wrap">
+            <strong className="card-lede">{c.lede}</strong>{' '}{c.body}
+          </p>
+          <div className="card-actions">
+            <button className="action-primary go-deeper">
+              Go deeper <CaretRight size={12} weight="bold" />
+            </button>
+            <button className="action-secondary">
+              <BookmarkSimple size={14} /> Track this storyline
+            </button>
+            <button className="action-tertiary">
+              <Sparkle size={14} /> Ask AI
+            </button>
+          </div>
+        </article>
+      ))}
+      <div className="deeper-overlay">
+        <div className="deeper-sheet" onClick={e => e.stopPropagation()}>
+          <div className="sheet-handle" />
+          <div className="deeper-header">
+            <div className="deeper-eyebrow">{card.eyebrow}</div>
+            <Hotspot onClick={goNext} label="Close Go Deeper">
+              <button className="ai-close hotspot-target"><X size={18} /></button>
+            </Hotspot>
+          </div>
+          <hr className="sheet-rule" />
+          <div className="deeper-section">
+            <div className="deeper-section-label"><Article size={12} weight="bold" /> Source articles</div>
+            <div className="deeper-sources">
+              {card.deeper.sources.map((s, i) => (
+                <div key={i} className="deeper-source">
+                  <div className="deeper-source-title">{s.title}</div>
+                  <div className="deeper-source-meta">{s.pub} · {s.time}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="deeper-section">
+            <div className="deeper-section-label"><UserCircle size={12} weight="bold" /> Key people</div>
+            <div className="deeper-people">
+              {card.deeper.people.map((p, i) => (
+                <div key={i} className="deeper-person">
+                  <div className="deeper-person-name">{p.name}</div>
+                  <div className="deeper-person-role">{p.role}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="deeper-section">
+            <div className="deeper-section-label"><TrendUp size={12} weight="bold" /> Key numbers</div>
+            <div className="deeper-numbers">
+              {card.deeper.numbers.map((n, i) => (
+                <div key={i} className="deeper-number">
+                  <div className="deeper-number-value">{n.value}</div>
+                  <div className="deeper-number-label">{n.label}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </BriefingScreen>
+  );
+}
+
+function MomentTrack({ goNext }) {
+  return (
+    <BriefingScreen title="Your Tuesday Briefing" date="October 7, 2026">
+      {BRIEFING_CARDS.map((c, i) => (
+        <article key={i} className="storyline-card">
+          <div className="card-eyebrow">{c.eyebrow}</div>
+          <p className="card-body-wrap">
+            <strong className="card-lede">{c.lede}</strong>{' '}{c.body}
+          </p>
+          <div className="card-actions">
+            <button className="action-primary go-deeper">
+              Go deeper <CaretRight size={12} weight="bold" />
+            </button>
+            {i === 1 ? (
+              <Hotspot onClick={goNext} label="Track this storyline">
+                <button className="action-secondary hotspot-target">
+                  <BookmarkSimple size={14} /> Track this storyline
+                </button>
+              </Hotspot>
+            ) : (
+              <button className="action-secondary">
+                <BookmarkSimple size={14} /> Track this storyline
+              </button>
+            )}
+            <button className="action-tertiary">
+              <Sparkle size={14} /> Ask AI
+            </button>
+          </div>
+        </article>
+      ))}
+    </BriefingScreen>
   );
 }
 
@@ -556,6 +682,7 @@ function Moment5({ goNext }) {
 
 const COVER_STEPS = [
   { label: 'Morning Briefing', desc: 'AI-synthesized storylines with the key "so what" up front' },
+  { label: 'Go Deeper', desc: 'Source articles, key people, and key numbers behind any storyline' },
   { label: 'Track a Storyline', desc: 'With smart alerts, one tap to follow — Briefly extracts what to watch automatically' },
   { label: 'Delta Alert', desc: 'With smart alerts, 48 hours later she gets only the developments that changed the picture' },
   { label: 'Personalized Briefing', desc: 'Friday\'s briefing adapts to what she\'s tracking' },
@@ -614,7 +741,7 @@ function CoverPage({ onStart }) {
 
 /* ---- Main App ---- */
 
-const MOMENTS = [Moment1, Moment2, Moment3, Moment5, Moment4];
+const MOMENTS = [MomentBriefing, MomentDeeper, MomentTrack, Moment2, Moment3, Moment5, Moment4];
 
 export default function App() {
   const [started, setStarted] = useState(false);
